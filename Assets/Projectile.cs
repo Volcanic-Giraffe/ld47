@@ -9,6 +9,7 @@ public class Projectile : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
+        Debug.Log($"Colliding Projectile with {collision.gameObject.name}.");
         var damageable = collision.gameObject.GetComponent<Damageable>();
         if(damageable != null)
         {
