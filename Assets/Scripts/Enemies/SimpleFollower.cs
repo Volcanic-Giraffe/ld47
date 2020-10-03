@@ -58,8 +58,6 @@ public class SimpleFollower : MonoBehaviour
         if (_player == null) return;
         var distanceFromStart = Vector3.Distance(_startPosition, _player.transform.position);
 
-        Debug.Log(distanceFromStart);
-        
         var target = _player.transform.position;
         if (distanceFromStart > visionRadius)
         {
