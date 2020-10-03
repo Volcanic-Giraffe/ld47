@@ -15,7 +15,6 @@ namespace GameState
             _hero = GameObject.FindGameObjectWithTag("Hero");
             _state = GameState.GetInstance();
             _prevHeroPosition = _hero.transform.position;
-            _state.Initialize(_prevHeroPosition, 1);
         }
 
         private void Update()
@@ -41,13 +40,13 @@ namespace GameState
             {
                 var point = new Vector3(
                     Mathf.Cos(Mathf.Deg2Rad * i),
-                    Mathf.Sin(Mathf.Deg2Rad * i),
-                    0
-                    ) * 6f;
+                    0,
+                    Mathf.Sin(Mathf.Deg2Rad * i)
+                ) * 6f;
                 var loop = _state.GetLoopByIdx(SectorUtils.PositionToSectorIdx(point));
                 var color = colors[loop % colors.Length];
                 Handles.color = new Color(color.r, color.g, color.b, 0.1f);
-                Handles.DrawSolidArc(Vector3.zero, Vector3.forward,  point, sectorAngle, 6f);
+                Handles.DrawSolidArc(Vector3.zero, Vector3.up,  point, sectorAngle, 6f);
                 Handles.color = new Color(0, 0, 0, 0.5f);
 
                 Handles.Label(point, "Idx " + SectorUtils.PositionToSectorIdx(point) + " Loop " + loop);// + " ang = " + Mathf.Rad2Deg *Mathf.Atan2(-point.y, point.x) + "/" + i);

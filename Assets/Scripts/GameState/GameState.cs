@@ -92,7 +92,8 @@ namespace GameState
 
         private void OnOnLoopChange(SectorChangeLoop change)
         {
-            if (change.NewLoop >= loops.Count || change.PrevLoop >= loops.Count) return;
+            if (change.NewLoop >= loops.Count || (change.PrevLoop != null && change.PrevLoop >= loops.Count)) return;
+            Debug.Log("!!!!");
             var nextLoopState = loops[change.NewLoop];
             if (change.PrevLoop == null)
             {

@@ -15,6 +15,7 @@ namespace GameState
             {
                 AddLoop(loop.gameObject, state);
             }
+            state.Initialize(GameObject.FindGameObjectWithTag("Hero").transform.position, 1);
         }
 
         private void AddLoop(GameObject loop, GameState state)
@@ -25,13 +26,20 @@ namespace GameState
             foreach (Transform instantiatedPrefab in loop.transform)
             {
                 if (instantiatedPrefab.gameObject.name == "Dungeon") continue;
+                var localPosition = instantiatedPrefab.transform.localPosition;
+                var correctPosition = new Vector3(
+                    localPosition.x,
+                    0,
+                    localPosition.y
+                    );
                 var prefabInLoop = new PrefabInLoop()
                 {
                     ID = LoopState.NextId++,
                     IsInitialOne = true,
-                    Position = instantiatedPrefab.transform.localPosition,
+                    Position = correctPosition,
                     Prefab = instantiatedPrefab.gameObject,
-                    State = null
+                    State = null,
+                    SectorIdx = SectorUtils.PositionToSectorIdx(correctPosition)
                 };
                 loopState.Prefabs.Add(prefabInLoop);
             }

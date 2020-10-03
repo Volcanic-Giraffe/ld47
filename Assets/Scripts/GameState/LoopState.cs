@@ -41,7 +41,8 @@ namespace GameState
                             IsInitialOne = false,
                             Prefab = nextPrefab,
                             State = loopable.SaveState(),
-                            Position = loopable.GetPosition()
+                            Position = loopable.GetPosition(),
+                            SectorIdx = SectorUtils.PositionToSectorIdx(loopable.GetPosition())
                         };
                         Prefabs.Add(newPrefab);
                         Debug.Log($"Add prefab {newPrefab.Prefab} #{obj.ID} instead (grow)");
@@ -108,6 +109,7 @@ namespace GameState
         public GameObject Prefab; // used to create object when first enter into loop
 
         public Vector3 Position; // where to create object
+        public int SectorIdx; //for debug
 
         [CanBeNull] public object State;
     }
