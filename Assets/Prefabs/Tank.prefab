@@ -77,7 +77,7 @@ MonoBehaviour:
   Speed: 5
   Ground:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 4096
 --- !u!54 &5455610667488535249
 Rigidbody:
   m_ObjectHideFlags: 0
