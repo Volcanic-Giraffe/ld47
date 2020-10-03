@@ -12,12 +12,15 @@ public class SimpleFollower : MonoBehaviour
     public float moveSpeed;
     public float turnSpeed;
     public float visionRadius;
+
+    private Vector3 _startPosition;
     
     // Start is called before the first frame update
     void Start()
     {
         _rig = GetComponent<Rigidbody>();
-        
+        _startPosition = transform.position;
+
         FindPlayer();
     }
 
@@ -53,12 +56,24 @@ public class SimpleFollower : MonoBehaviour
     private void MoveAtPlayer()
     {
         if (_player == null) return;
-        var distance = Vector3.Distance(transform.position, _player.transform.position);
-        if (distance > visionRadius) return;
+        var distanceFromStart = Vector3.Distance(_startPosition, _player.transform.position);
+
+        Debug.Log(distanceFromStart);
         
-        var targetDir = _player.transform.position - transform.position;
+        var target = _player.transform.position;
+        if (distanceFromStart > visionRadius)
+        {
+            target = _startPosition;
+        }
         
-        _rig.MovePosition(_rig.position + targetDir.normalized * (moveSpeed * Time.fixedDeltaTime));
+        var targetDir = target - transform.position;
+        
+        var distance = Vector3.Distance(transform.position, target);
+
+        if (distance > 0.5f)
+        {
+            _rig.MovePosition(_rig.position + targetDir.normalized * (moveSpeed * Time.fixedDeltaTime));
+        }
     }
 
     private void FindPlayer()
