@@ -16,12 +16,12 @@ TagManager:
   - 
   - 
   - AlwaysLit
-  - 
+  - Player
   - BasePlane
   - Ground
-  - 
-  - 
-  - 
+  - PlayerProjectile
+  - Enemy
+  - EnemyProjectile
   - 
   - 
   - 

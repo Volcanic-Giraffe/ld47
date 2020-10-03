@@ -38,7 +38,7 @@ GameObject:
   - component: {fileID: 1691693703952786387}
   - component: {fileID: 6556511592455308977}
   - component: {fileID: 5455610667488535249}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Tank
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -56,9 +56,9 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 7675149245460323429}
   - {fileID: 6405642901639452741}
   - {fileID: 7233158977465588530}
+  - {fileID: 638998596585943395}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -103,7 +103,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7233158977465588530}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: turret_point
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -122,9 +122,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1691693703952786387}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &3181381569731519348
+--- !u!1001 &5655184035281702514
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -135,29 +135,33 @@ PrefabInstance:
       propertyPath: m_Name
       value: CannonTurret
       objectReference: {fileID: 0}
-    - target: {fileID: 2303903718388234769, guid: c8f409e3f142dc84bafe41dfc4b67066, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.045
+    - target: {fileID: 368135457057002257, guid: c8f409e3f142dc84bafe41dfc4b67066, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 2303903718388234769, guid: c8f409e3f142dc84bafe41dfc4b67066, type: 3}
+    - target: {fileID: 368135457057002257, guid: c8f409e3f142dc84bafe41dfc4b67066, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1491479367766450347, guid: c8f409e3f142dc84bafe41dfc4b67066, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4819127656175470029, guid: c8f409e3f142dc84bafe41dfc4b67066, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5090495004382035729, guid: c8f409e3f142dc84bafe41dfc4b67066, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.442
-      objectReference: {fileID: 0}
-    - target: {fileID: 2303903718388234769, guid: c8f409e3f142dc84bafe41dfc4b67066, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0.295
-      objectReference: {fileID: 0}
-    - target: {fileID: 5090495004382035729, guid: c8f409e3f142dc84bafe41dfc4b67066, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.001
+      value: 0.008
       objectReference: {fileID: 0}
     - target: {fileID: 5090495004382035729, guid: c8f409e3f142dc84bafe41dfc4b67066, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.506
+      value: 0.48
       objectReference: {fileID: 0}
     - target: {fileID: 5090495004382035729, guid: c8f409e3f142dc84bafe41dfc4b67066, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.111
+      value: -0.132
       objectReference: {fileID: 0}
     - target: {fileID: 5090495004382035729, guid: c8f409e3f142dc84bafe41dfc4b67066, type: 3}
       propertyPath: m_LocalRotation.x
@@ -177,7 +181,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5090495004382035729, guid: c8f409e3f142dc84bafe41dfc4b67066, type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5090495004382035729, guid: c8f409e3f142dc84bafe41dfc4b67066, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -191,24 +195,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7567491620781313941, guid: c8f409e3f142dc84bafe41dfc4b67066, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.184
-      objectReference: {fileID: 0}
-    - target: {fileID: 7567491620781313941, guid: c8f409e3f142dc84bafe41dfc4b67066, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.004
-      objectReference: {fileID: 0}
-    - target: {fileID: 7567491620781313941, guid: c8f409e3f142dc84bafe41dfc4b67066, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.651
+    - target: {fileID: 7583788498627876978, guid: c8f409e3f142dc84bafe41dfc4b67066, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c8f409e3f142dc84bafe41dfc4b67066, type: 3}
---- !u!4 &7675149245460323429 stripped
+--- !u!4 &638998596585943395 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5090495004382035729, guid: c8f409e3f142dc84bafe41dfc4b67066, type: 3}
-  m_PrefabInstance: {fileID: 3181381569731519348}
+  m_PrefabInstance: {fileID: 5655184035281702514}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6876947405041156014
 PrefabInstance:
@@ -235,7 +231,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 330ce9e19eaca7749bf609d2c2ba0a2c, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 330ce9e19eaca7749bf609d2c2ba0a2c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -260,6 +256,14 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 330ce9e19eaca7749bf609d2c2ba0a2c, type: 3}
       propertyPath: m_Name
       value: tank_base
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 330ce9e19eaca7749bf609d2c2ba0a2c, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8164078558771037576, guid: 330ce9e19eaca7749bf609d2c2ba0a2c, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 330ce9e19eaca7749bf609d2c2ba0a2c, type: 3}

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1803461453422706225}
   - component: {fileID: 3156399554815723944}
   m_Layer: 0
-  m_Name: CannonTurret
+  m_Name: BFGTurret
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -61,8 +61,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CannonPoint: {fileID: 7567491620781313941}
   Projectile: {fileID: 1847650053701656589, guid: 8e6674a84bc024245ad0c93307f32203, type: 3}
-  ShotSpeed: 15
-  Firerate: 0.5
+  ShotSpeed: 30
+  Firerate: 0.1
 --- !u!1 &4819127656175470029
 GameObject:
   m_ObjectHideFlags: 0

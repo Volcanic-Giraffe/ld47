@@ -20,7 +20,7 @@ public class Turret : MonoBehaviour
             var lookPos = hit.point - transform.position;
             lookPos.y = 0;
             var rotation = Quaternion.LookRotation(lookPos);
-            transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * RotationSpeed);
+            transform.rotation = rotation; //feels shitty  Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * RotationSpeed);
         }
 
         if (Input.GetMouseButton(0))
