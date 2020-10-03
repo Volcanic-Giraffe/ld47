@@ -25,7 +25,7 @@ namespace GameState
 
             foreach (Transform instantiatedPrefab in loop.transform)
             {
-                if (instantiatedPrefab.gameObject.name == "Dungeon") continue;
+                if (instantiatedPrefab.gameObject.name == "Dungeon" || instantiatedPrefab.gameObject.name == "Ground") continue;
                 var localPosition = instantiatedPrefab.transform.localPosition;
                 var correctPosition = new Vector3(
                     localPosition.x,

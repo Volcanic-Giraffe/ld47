@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Loop;
 using UnityEngine;
 
 namespace GameState
@@ -93,7 +94,7 @@ namespace GameState
         private void OnOnLoopChange(SectorChangeLoop change)
         {
             if (change.NewLoop >= loops.Count || (change.PrevLoop != null && change.PrevLoop >= loops.Count)) return;
-            Debug.Log("!!!!");
+           // Debug.Log("!!!!");
             var nextLoopState = loops[change.NewLoop];
             if (change.PrevLoop == null)
             {
@@ -108,6 +109,21 @@ namespace GameState
             else
             {
                 nextLoopState.EnterBackward(change.SectorIdx, prevLoopState);
+            }
+        }
+
+        public void ReplaceObject(GameObject gameObject, GameObject corpse)
+        {
+            var loopable = gameObject.GetComponent<ILoopable>();
+
+            for (int loopId = 0; loopId < loops.Count; loopId++)
+            {
+                var loop = loops[loopId];
+                var objectInLoop = loop.Objects.Find(o => o.CurrentObject == gameObject);
+                if (objectInLoop == null) continue;
+                objectInLoop.CurrentObject = corpse;
+                (corpse.GetComponent<ILoopable>())?.RestorePosition(loopable.GetPosition());
+                Debug.Log($"Replace {gameObject} #{objectInLoop.ID} with {corpse} at loop {loopId}");
             }
         }
     }
