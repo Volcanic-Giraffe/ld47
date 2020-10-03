@@ -11,6 +11,7 @@ public class SimpleFollower : MonoBehaviour
     
     public float moveSpeed;
     public float turnSpeed;
+    public float visionRadius;
     
     // Start is called before the first frame update
     void Start()
@@ -29,12 +30,14 @@ public class SimpleFollower : MonoBehaviour
     private void FixedUpdate()
     {
         LookAtPlayer();
-
+        MoveAtPlayer();
     }
 
     private void LookAtPlayer()
     {
         if (_player == null) return;
+        var distance = Vector3.Distance(transform.position, _player.transform.position);
+        if (distance > visionRadius) return;
         
         var targetDir = _player.transform.position - transform.position;
         var forward = transform.forward;
@@ -45,6 +48,17 @@ public class SimpleFollower : MonoBehaviour
         var eulerAngleVelocity = new Vector3 (0, angle, 0);
         var deltaRotation = Quaternion.Euler(eulerAngleVelocity * (Time.deltaTime * turnSpeed));
         _rig.MoveRotation(_rig.rotation * deltaRotation);
+    }
+
+    private void MoveAtPlayer()
+    {
+        if (_player == null) return;
+        var distance = Vector3.Distance(transform.position, _player.transform.position);
+        if (distance > visionRadius) return;
+        
+        var targetDir = _player.transform.position - transform.position;
+        
+        _rig.MovePosition(_rig.position + targetDir.normalized * (moveSpeed * Time.fixedDeltaTime));
     }
 
     private void FindPlayer()
