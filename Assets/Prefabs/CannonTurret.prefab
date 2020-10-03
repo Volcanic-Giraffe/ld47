@@ -61,6 +61,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CannonPoint: {fileID: 7567491620781313941}
   Projectile: {fileID: 1847650053701656589, guid: 8e6674a84bc024245ad0c93307f32203, type: 3}
+  Flash: {fileID: 7126102090859329453, guid: e420179e56eae84478f3e4cda1112443, type: 3}
   ShotSpeed: 15
   Firerate: 0.5
 --- !u!1 &4819127656175470029
