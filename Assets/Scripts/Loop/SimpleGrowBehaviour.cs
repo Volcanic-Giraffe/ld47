@@ -6,11 +6,20 @@ namespace Loop
     public class SimpleGrowBehaviour : MonoBehaviour, ILoopable
     {
         public GameObject NextPrefab;
+        public GameObject OnDeathPrefab;
 
         private Vector3 _initPosition;
         private void Awake()
         {
             _initPosition = transform.position;
+        }
+
+        public void ReplaceWithCorpse()
+        {
+            if (OnDeathPrefab == null) return;
+            var corpse = Instantiate(OnDeathPrefab);
+            corpse.transform.position = transform.position;
+            GameState.GameState.GetInstance().ReplaceObject(gameObject, corpse);
         }
 
         public object SaveState()
