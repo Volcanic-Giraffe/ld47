@@ -1370,6 +1370,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BigBot
       objectReference: {fileID: 0}
+    - target: {fileID: 4590139097869069565, guid: 90a10ebca3317f249b709975e99693d6, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 52dea5604f0e1d045b93ca349ea1deab, type: 2}
     - target: {fileID: 4641446078381399920, guid: 90a10ebca3317f249b709975e99693d6, type: 3}
       propertyPath: m_LocalPosition.x
       value: -5.61

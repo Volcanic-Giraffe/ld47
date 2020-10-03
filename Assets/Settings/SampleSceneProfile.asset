@@ -95,23 +95,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70afe9e12c7a7ed47911bb608a23a8ff, type: 3}
   m_Name: SplitToning
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   m_AdvancedMode: 0
   shadows:
     m_OverrideState: 1
-    m_Value: {r: 0.29411766, g: 0.40716764, b: 0.5764706, a: 1}
+    m_Value: {r: 0.6792453, g: 0.8029566, b: 0.9056604, a: 1}
     hdr: 0
     showAlpha: 0
     showEyeDropper: 1
   highlights:
     m_OverrideState: 1
-    m_Value: {r: 0.9528302, g: 0.87470853, b: 0.6427109, a: 1}
+    m_Value: {r: 0.4433962, g: 0.3246059, b: 0.26980242, a: 1}
     hdr: 0
     showAlpha: 0
     showEyeDropper: 1
   balance:
     m_OverrideState: 1
-    m_Value: -8
+    m_Value: 6
     min: -100
     max: 100
 --- !u!114 &11400000
