@@ -37,6 +37,7 @@ namespace GameState
                     ID = LoopState.NextId++,
                     IsInitialOne = true,
                     Position = correctPosition,
+                    Rotation = instantiatedPrefab.transform.localRotation,
                     Prefab = instantiatedPrefab.gameObject,
                     State = null,
                     SectorIdx = SectorUtils.PositionToSectorIdx(correctPosition)
