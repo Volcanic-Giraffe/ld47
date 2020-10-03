@@ -6,6 +6,7 @@ public class Cannon : MonoBehaviour
 {
     public Transform CannonPoint;
     public GameObject Projectile;
+    public GameObject Flash;
 
     public float ShotSpeed;
     public float Firerate = 1f;
@@ -35,6 +36,10 @@ public class Cannon : MonoBehaviour
             proj.transform.position = CannonPoint.position;
             proj.transform.rotation = transform.rotation;
             proj.GetComponent<Rigidbody>().AddForce(transform.forward * ShotSpeed, ForceMode.VelocityChange);
+            
+            var flash = Instantiate(Flash, this.transform);
+            flash.transform.GetChild(0).transform.localScale = new Vector3(0.4f, 0.4f, 0.4f);
+            flash.transform.position = CannonPoint.position;
         }
 
     }
