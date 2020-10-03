@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6437262564969238264}
   - component: {fileID: 1933949399069124763}
   - component: {fileID: 1064376433116532977}
+  - component: {fileID: 112588419867840069}
   m_Layer: 14
   m_Name: BigBot
   m_TagString: Untagged
@@ -94,6 +95,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da9981fedb944a44872309e20aa65f01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &112588419867840069
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1597173641344653236}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8906ea9270deab0479d04947fea34cc9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 5
+  turnSpeed: 5
 --- !u!1 &1771264477073417649
 GameObject:
   m_ObjectHideFlags: 0
