@@ -42,6 +42,7 @@ namespace GameState
                             Prefab = nextPrefab,
                             State = loopable.SaveState(),
                             Position = loopable.GetPosition(),
+                            Rotation = obj.CurrentObject.transform.localRotation,
                             SectorIdx = SectorUtils.PositionToSectorIdx(loopable.GetPosition())
                         };
                         Prefabs.Add(newPrefab);
@@ -65,6 +66,7 @@ namespace GameState
                 
                 var go = GameObject.Instantiate(prefab.Prefab);
                 go.transform.position = prefab.Position;
+                go.transform.localRotation = prefab.Rotation;
                 var loopable = go.GetComponent<ILoopable>();
                 if (loopable != null)
                 {
@@ -109,6 +111,7 @@ namespace GameState
         public GameObject Prefab; // used to create object when first enter into loop
 
         public Vector3 Position; // where to create object
+        public Quaternion Rotation; // how to rotate it
         public int SectorIdx; //for debug
 
         [CanBeNull] public object State;
