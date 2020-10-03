@@ -21,7 +21,7 @@ public class HeroSimple : MonoBehaviour
     void Update()
     {
         _movement = new Vector3(
-            Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"), 0).normalized;
+            Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical")).normalized;
     }
 
     private void FixedUpdate()

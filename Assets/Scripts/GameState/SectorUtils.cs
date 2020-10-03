@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.Assertions;
 
 namespace GameState
 {
@@ -21,11 +22,12 @@ namespace GameState
 
         public static int PositionToSectorIdx(Vector3 position)
         {
-            return AngleToIdx(Mathf.Atan2(-position.y, position.x));
+            return AngleToIdx(Mathf.Atan2(-position.z, position.x));
         }
 
         public static bool MatchSector(Vector3 position, int sectorIdx)
         {
+            Assert.AreEqual(position.y, 0);
             return PositionToSectorIdx(position) == sectorIdx;
         }
         
