@@ -11,12 +11,16 @@ public class SimpleFollower : MonoBehaviour
     
     public float moveSpeed;
     public float turnSpeed;
+    public float visionRadius;
+
+    private Vector3 _startPosition;
     
     // Start is called before the first frame update
     void Start()
     {
         _rig = GetComponent<Rigidbody>();
-        
+        _startPosition = transform.position;
+
         FindPlayer();
     }
 
@@ -29,12 +33,14 @@ public class SimpleFollower : MonoBehaviour
     private void FixedUpdate()
     {
         LookAtPlayer();
-
+        MoveAtPlayer();
     }
 
     private void LookAtPlayer()
     {
         if (_player == null) return;
+        var distance = Vector3.Distance(transform.position, _player.transform.position);
+        if (distance > visionRadius) return;
         
         var targetDir = _player.transform.position - transform.position;
         var forward = transform.forward;
@@ -45,6 +51,27 @@ public class SimpleFollower : MonoBehaviour
         var eulerAngleVelocity = new Vector3 (0, angle, 0);
         var deltaRotation = Quaternion.Euler(eulerAngleVelocity * (Time.deltaTime * turnSpeed));
         _rig.MoveRotation(_rig.rotation * deltaRotation);
+    }
+
+    private void MoveAtPlayer()
+    {
+        if (_player == null) return;
+        var distanceFromStart = Vector3.Distance(_startPosition, _player.transform.position);
+
+        var target = _player.transform.position;
+        if (distanceFromStart > visionRadius)
+        {
+            target = _startPosition;
+        }
+        
+        var targetDir = target - transform.position;
+        
+        var distance = Vector3.Distance(transform.position, target);
+
+        if (distance > 0.5f)
+        {
+            _rig.MovePosition(_rig.position + targetDir.normalized * (moveSpeed * Time.fixedDeltaTime));
+        }
     }
 
     private void FindPlayer()
