@@ -7,6 +7,8 @@ public class SimpleMelee : MonoBehaviour
 {
     private GameObject _player;
 
+    public PlayerDetector playerDetector;
+    
     public GameObject punchProjectile;
     public Transform punchSpawn;
     
@@ -22,7 +24,7 @@ public class SimpleMelee : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        FindPlayer();
+        _player = playerDetector.GetPlayer();
     }
     
     void Update()
@@ -55,18 +57,5 @@ public class SimpleMelee : MonoBehaviour
     public void SpawnPunch()
     {
         Instantiate(punchProjectile, punchSpawn.position, transform.rotation);
-    } 
-    
-    private void FindPlayer()
-    {
-        if (_player == null)
-        {
-            var objs = GameObject.FindGameObjectsWithTag("Hero");
-
-            if (objs != null && objs.Length > 0)
-            {    
-                _player = objs[0];
-            }
-        }
     }
 }

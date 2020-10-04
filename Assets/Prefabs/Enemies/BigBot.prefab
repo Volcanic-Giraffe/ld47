@@ -11,13 +11,14 @@ GameObject:
   - component: {fileID: 4641446078381399920}
   - component: {fileID: 4834156276682633164}
   - component: {fileID: 8770415255903788396}
+  - component: {fileID: 1048916959109600764}
+  - component: {fileID: 6829718893042980143}
   - component: {fileID: 6437262564969238264}
   - component: {fileID: 1933949399069124763}
   - component: {fileID: 1064376433116532977}
+  - component: {fileID: 6282086918063593103}
   - component: {fileID: 112588419867840069}
   - component: {fileID: 8717682842788736722}
-  - component: {fileID: 1048916959109600764}
-  - component: {fileID: 6829718893042980143}
   m_Layer: 14
   m_Name: BigBot
   m_TagString: Enemy
@@ -80,6 +81,33 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!65 &1048916959109600764
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1597173641344653236}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.6, y: 0.7, z: 0.7}
+  m_Center: {x: 0, y: 0.3, z: 0}
+--- !u!136 &6829718893042980143
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1597173641344653236}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.16
+  m_Height: 0.88
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.15, z: 0}
 --- !u!114 &6437262564969238264
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -119,6 +147,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da9981fedb944a44872309e20aa65f01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &6282086918063593103
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1597173641344653236}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77247c142af73ea468a03b0b8c97704e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &112588419867840069
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -131,9 +171,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8906ea9270deab0479d04947fea34cc9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerDetector: {fileID: 6282086918063593103}
   moveSpeed: 2
   turnSpeed: 5
   visionRadius: 5
+  agroDelay: 0.5
 --- !u!114 &8717682842788736722
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -146,38 +188,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 165a79f7079457c4880bafee602a60ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerDetector: {fileID: 6282086918063593103}
   punchProjectile: {fileID: 7214058320693026531, guid: e84fd5aaf2c5a3249baecc62c8753a60, type: 3}
   punchSpawn: {fileID: 5557534274397761801}
   _anim: {fileID: 8770415255903788396}
   attackRadius: 1
   attackRate: 1.5
---- !u!65 &1048916959109600764
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1597173641344653236}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.6, y: 0.7, z: 0.7}
-  m_Center: {x: 0, y: 0.3, z: 0}
---- !u!136 &6829718893042980143
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1597173641344653236}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.16
-  m_Height: 0.88
-  m_Direction: 1
-  m_Center: {x: 0, y: 0.15, z: 0}
 --- !u!1 &1771264477073417649
 GameObject:
   m_ObjectHideFlags: 0

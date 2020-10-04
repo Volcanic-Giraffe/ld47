@@ -42,6 +42,7 @@ GameObject:
   - component: {fileID: 6956371201075254094}
   - component: {fileID: 7301580324547465106}
   - component: {fileID: 3897171942459376002}
+  - component: {fileID: 5923230520009625250}
   - component: {fileID: 4449949789528965543}
   m_Layer: 0
   m_Name: EnemyTurret
@@ -99,6 +100,18 @@ MonoBehaviour:
   Flash: {fileID: 1316390964462558284, guid: 84af8ebd8754c6f41822b8d5d5df33cc, type: 3}
   ShotSpeed: 15
   Firerate: 1
+--- !u!114 &5923230520009625250
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6319460998097336830}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77247c142af73ea468a03b0b8c97704e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &4449949789528965543
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -112,9 +125,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   turnSpeed: 2
-  visionRadius: 5
+  visionRadius: 20
   readyToAttackAngle: 5
   cannon: {fileID: 3897171942459376002}
+  playerDetector: {fileID: 5923230520009625250}
 --- !u!1 &9132015167442089059
 GameObject:
   m_ObjectHideFlags: 0

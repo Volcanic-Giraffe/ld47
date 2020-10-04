@@ -10,16 +10,16 @@ public class EnemyTurret : MonoBehaviour
     public float readyToAttackAngle;
 
     public Cannon cannon;
+    public PlayerDetector playerDetector;
     
     private Rigidbody _rig;
 
     private GameObject _player;
-    
+
     void Start()
     {
         _rig = GetComponent<Rigidbody>();
-
-        FindPlayer();
+        _player = playerDetector.GetPlayer();
     }
 
 
@@ -37,25 +37,15 @@ public class EnemyTurret : MonoBehaviour
         var localTarget = transform.InverseTransformPoint(_player.transform.position);
      
         var angle = Mathf.Atan2(localTarget.x, localTarget.z) * Mathf.Rad2Deg;
-
-        if (angle < readyToAttackAngle) cannon.Fire();
+        
+        if (angle < readyToAttackAngle && playerDetector.CanSeePlayer(transform.position))
+        {
+            cannon.Fire();
+        }
         
         var eulerAngleVelocity = new Vector3 (0, angle, 0);
         var deltaRotation = Quaternion.Euler(eulerAngleVelocity * (Time.deltaTime * turnSpeed));
 
         _rig.MoveRotation(_rig.rotation * deltaRotation);
-    }
-    
-    private void FindPlayer()
-    {
-        if (_player == null)
-        {
-            var objs = GameObject.FindGameObjectsWithTag("Hero");
-
-            if (objs != null && objs.Length > 0)
-            {    
-                _player = objs[0];
-            }
-        }
     }
 }
