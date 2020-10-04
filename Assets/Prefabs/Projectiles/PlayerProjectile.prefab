@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 23693524485606590}
   m_Layer: 13
   m_Name: PlayerProjectile
-  m_TagString: Untagged
+  m_TagString: Hero
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 1
@@ -156,3 +156,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Damage: 5
   Explosion: {fileID: 7126102090859329453, guid: e420179e56eae84478f3e4cda1112443, type: 3}
+  hitOnlyTag: 
