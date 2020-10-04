@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 9188138456808894999}
   - component: {fileID: 9188138456808894998}
   - component: {fileID: 6259262412479781617}
+  - component: {fileID: 4448003219437396477}
   m_Layer: 0
   m_Name: PerspCam
   m_TagString: MainCamera
@@ -133,3 +134,49 @@ MonoBehaviour:
   blendDistance: 0
   weight: 1
   sharedProfile: {fileID: 11400000, guid: 10fc4df2da32a41aaa32d77bc913491c, type: 2}
+--- !u!114 &4448003219437396477
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9188138456808894997}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1b27f03de19ba2458cd716069a91088, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ppVolume: {fileID: 6259262412479781617}
+  onHitCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 4.170287
+      outSlope: 4.170287
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.014026602
+    - serializedVersion: 3
+      time: 0.11340138
+      value: 0.19901729
+      inSlope: -3.9541593
+      outSlope: -3.9541593
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.115388714
+      outWeight: 0.07086984
+    - serializedVersion: 3
+      time: 0.2548759
+      value: 0.000028477749
+      inSlope: -0.044311795
+      outSlope: -0.044311795
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 1
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
