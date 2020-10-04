@@ -4591,7 +4591,7 @@ GameObject:
   - component: {fileID: 1530716013}
   - component: {fileID: 1530716012}
   m_Layer: 0
-  m_Name: Shadower
+  m_Name: Hider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4616,7 +4616,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a299c8111f227b04986c9daed5040950, type: 2}
+  - {fileID: 2100000, guid: 472d5a7fabd189648b302e648dd6f4b9, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4658,7 +4658,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 659d2779ea824899aeadef28f93aec88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ShadowerMaterial: {fileID: 2100000, guid: a299c8111f227b04986c9daed5040950, type: 2}
+  ShadowerMaterial: {fileID: 2100000, guid: 472d5a7fabd189648b302e648dd6f4b9, type: 2}
 --- !u!4 &1530716015
 Transform:
   m_ObjectHideFlags: 0
@@ -4667,7 +4667,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1530716011}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 2.52, z: 0}
+  m_LocalPosition: {x: 0, y: 2, z: 0}
   m_LocalScale: {x: 16, y: 16, z: 16}
   m_Children: []
   m_Father: {fileID: 0}
