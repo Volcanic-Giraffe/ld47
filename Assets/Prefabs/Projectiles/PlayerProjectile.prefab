@@ -155,5 +155,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Damage: 5
-  Explosion: {fileID: 7126102090859329453, guid: d49269bfb6f2058459b5cc28d3a99e99, type: 3}
+  Explosion: {fileID: 7126102090859329453, guid: e420179e56eae84478f3e4cda1112443, type: 3}
   hitOnlyTag: 
