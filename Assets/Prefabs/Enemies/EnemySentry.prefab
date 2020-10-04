@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 8248080693241708795}
   - component: {fileID: 1004497044381330202}
   - component: {fileID: 4496886339079381451}
+  - component: {fileID: 770474386361059978}
+  - component: {fileID: 2606336146457799588}
   m_Layer: 14
   m_Name: EnemySentry
   m_TagString: Enemy
@@ -75,6 +77,32 @@ CapsuleCollider:
   m_Height: 1
   m_Direction: 1
   m_Center: {x: 0, y: 0.5, z: 0}
+--- !u!114 &770474386361059978
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1474897946682083767}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 259ccc4b162f4e17adc7d15e840d40a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NextPrefab: {fileID: 0}
+  OnDeathPrefab: {fileID: 1597173641344653236, guid: 2b7648eadeffb65408e92f2b98d81aba, type: 3}
+--- !u!114 &2606336146457799588
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1474897946682083767}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da9981fedb944a44872309e20aa65f01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &5258208323412288329
 PrefabInstance:
   m_ObjectHideFlags: 0
