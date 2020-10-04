@@ -55,9 +55,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3882898066902343684, guid: d49269bfb6f2058459b5cc28d3a99e99, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 0ea78ab2db85416439255c092efaf285, type: 2}
     - target: {fileID: 7126102090859329453, guid: d49269bfb6f2058459b5cc28d3a99e99, type: 3}
       propertyPath: m_Name
-      value: StrongMineExplosion
+      value: StrongDamagingExplosion
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d49269bfb6f2058459b5cc28d3a99e99, type: 3}

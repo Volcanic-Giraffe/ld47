@@ -76,7 +76,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ppVolume: {fileID: 0}
-  Speed: 4
+  Speed: 3
   Ground:
     serializedVersion: 2
     m_Bits: 4096

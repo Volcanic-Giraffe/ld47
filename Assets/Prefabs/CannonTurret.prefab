@@ -59,7 +59,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 921a462c5504acd4281af895728cd6b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CannonPoint: {fileID: 7567491620781313941}
+  CannonPoint:
+  - {fileID: 7567491620781313941}
   Projectile: {fileID: 1847650053701656589, guid: 8e6674a84bc024245ad0c93307f32203, type: 3}
   Flash: {fileID: 7126102090859329453, guid: e420179e56eae84478f3e4cda1112443, type: 3}
   ShotSpeed: 18
