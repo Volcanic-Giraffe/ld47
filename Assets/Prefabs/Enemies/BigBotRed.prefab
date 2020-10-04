@@ -134,7 +134,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NextPrefab: {fileID: 0}
-  OnDeathPrefab: {fileID: 2261850643943274782, guid: a5d59132133afe64d907fb439241edbe, type: 3}
+  OnDeathPrefab: {fileID: 1597173641344653236, guid: 314e0c1817ba775489b99f99f2f461fc, type: 3}
 --- !u!114 &1064376433116532977
 MonoBehaviour:
   m_ObjectHideFlags: 0
