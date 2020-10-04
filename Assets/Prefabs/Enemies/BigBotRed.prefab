@@ -19,6 +19,7 @@ GameObject:
   - component: {fileID: 6282086918063593103}
   - component: {fileID: 112588419867840069}
   - component: {fileID: 8717682842788736722}
+  - component: {fileID: 121562757562582296}
   m_Layer: 14
   m_Name: BigBotRed
   m_TagString: Enemy
@@ -120,7 +121,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 136b236178e72ba47afb3e10d7bf99e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Health: 20
+  Health: 30
 --- !u!114 &1933949399069124763
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -172,7 +173,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerDetector: {fileID: 6282086918063593103}
-  moveSpeed: 2
+  moveSpeed: 1.5
   turnSpeed: 15
   visionRadius: 5
   agroDelay: 0.5
@@ -194,6 +195,19 @@ MonoBehaviour:
   _anim: {fileID: 8770415255903788396}
   attackRadius: 1
   attackRate: 1.5
+--- !u!114 &121562757562582296
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1597173641344653236}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7448b5c8288765b47aa4a0c7ad2b385b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Explosion: {fileID: 7126102090859329453, guid: d49269bfb6f2058459b5cc28d3a99e99, type: 3}
 --- !u!1 &1771264477073417649
 GameObject:
   m_ObjectHideFlags: 0
