@@ -45,26 +45,21 @@ public class PatrolFollower : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (laser.Charging) return;
         if (IsTheSameLineWithPlayer() && playerDetector.CanSeePlayer(transform.position))
         {
             var lookPos = _player.transform.position - transform.position;
             lookPos.y = 0;
             var rotation = Quaternion.LookRotation(lookPos);
             transform.rotation = rotation;
-            laser.ChargeLaser();
+            StartCoroutine(Fire());
         }
-        else
-        {
-            ContinuePatrolling();
-            laser.DischargeLaser();
-        }
-        
-        
     }
 
-    private void FireLaser()
+    private IEnumerator Fire()
     {
-        
+        yield return laser.WaitForChargeAndFire();
+        ContinuePatrolling();
     }
 
     private bool IsTheSameLineWithPlayer()

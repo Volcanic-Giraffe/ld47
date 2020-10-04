@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7525713039501718204}
   - component: {fileID: 7472243927908201049}
   - component: {fileID: 3149651246095584070}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93,7 +93,7 @@ GameObject:
   - component: {fileID: 8808175282844533086}
   - component: {fileID: 2128752687185337986}
   - component: {fileID: 8626193917232406148}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: HeartPickup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -170,7 +170,7 @@ GameObject:
   - component: {fileID: 660674551916169122}
   - component: {fileID: 3098406774665882182}
   - component: {fileID: 8494965153643402053}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: Sphere_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}

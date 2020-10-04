@@ -126,8 +126,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 136b236178e72ba47afb3e10d7bf99e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Health: 15
-  MaxHealth: 20
+  Health: 10
+  MaxHealth: 10
 --- !u!114 &4680852631243331737
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -167,8 +167,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 6188772994051480577, guid: d2a4f74ad4cfd7d41835c37608a25f88, type: 3}
+  aimPrefab: {fileID: 6188772994051480577, guid: 99c7b4e04af8aa849854c3a027b95172, type: 3}
   cannonPoint: {fileID: 2006599669843887272}
   chargeTime: 1
+  Charging: 0
 --- !u!114 &282821226844424969
 MonoBehaviour:
   m_ObjectHideFlags: 0

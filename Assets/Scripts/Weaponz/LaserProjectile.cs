@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class LaserProjectile : Projectile
 {
@@ -9,27 +6,34 @@ public class LaserProjectile : Projectile
 
     public Collider mainCollider;
 
-    private float ttl = 1f; // время затухания
-    private float ttlTimer;
-    
+    public float fadeTime = 1f;
+    private float fadeTimer = 1f;
+    public float ttlTimer = 0.2f;
+    private bool fading;
+
     void Start()
     {
-        ttlTimer = 0;
+        fadeTimer = 0;
         EnlargeLaser();
     }
 
     private void Update()
     {
-        if (ttlTimer > 0) ttlTimer -= Time.deltaTime;
-        if (ttlTimer < 0)
+        if (fading)
         {
-            base.DestroyProjectile();
-        }
-        if (ttlTimer > 0)
-        {
+            fadeTimer -= Time.deltaTime;
             var scaleXY = transform.localScale.x; // the same as Y
-            var reduced = ttlTimer / ttl * scaleXY;
+            var reduced = fadeTimer / fadeTime * scaleXY;
             transform.localScale = new Vector3(reduced, reduced, transform.localScale.z);
+            if (fadeTimer < 0)
+            {
+                base.DestroyProjectile();
+            }
+        }
+        else
+        {
+            ttlTimer -= Time.deltaTime;
+            if (ttlTimer <= 0) this.DestroyProjectile();
         }
     }
 
@@ -52,13 +56,13 @@ public class LaserProjectile : Projectile
 
     protected override void DoDamage(GameObject target)
     {
-        mainCollider.enabled = false;
-        
         base.DoDamage(target);
     }
 
     protected override void DestroyProjectile()
     {
-        ttlTimer = ttl;
+        fading = true;
+        mainCollider.enabled = false;
+        fadeTimer = fadeTime;
     }
 }

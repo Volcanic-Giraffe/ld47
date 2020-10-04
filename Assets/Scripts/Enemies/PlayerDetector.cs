@@ -7,7 +7,7 @@ public class PlayerDetector : MonoBehaviour
 {
     private GameObject _player;
 
-    private float range = 50f;
+    private const float range = 50f;
     
     private void Start()
     {
@@ -20,12 +20,12 @@ public class PlayerDetector : MonoBehaviour
         return _player;
     }
 
-    public bool CanSeePlayer(Vector3 hostPos)
+    public bool CanSeePlayer(Vector3 hostPos, float rangeOverride = range)
     {
         if (_player == null) return false;
         
         Vector3 targetPos = _player.transform.position;
-        Ray ray = new Ray(hostPos, (targetPos - hostPos).normalized * range);
+        Ray ray = new Ray(hostPos, (targetPos - hostPos).normalized * rangeOverride);
         RaycastHit hit;
 
         int mask = LayerMask.GetMask("Player", "Wall", "Default");

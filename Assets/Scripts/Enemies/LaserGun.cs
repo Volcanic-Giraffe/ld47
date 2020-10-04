@@ -5,46 +5,44 @@ using UnityEngine;
 public class LaserGun : MonoBehaviour
 {
     public GameObject projectilePrefab;
-    
+    public GameObject aimPrefab;
+
     public Transform cannonPoint;
     public float chargeTime;
     
     private float _chargeTimer;
-    private bool _charging;
-    
+    public bool Charging;
+    private GameObject aimBeam;
+
     void Start()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (_charging)
-        {
-            _chargeTimer -= Time.deltaTime;
-
-            if (_chargeTimer < 0)
-            {
-                _chargeTimer = chargeTime;
-                FireLaser();
-            }
-        }
     }
 
     void FireLaser()
     {
+        if (aimBeam != null) Destroy(aimBeam);
+        if (Charging == false) return;
         Instantiate(projectilePrefab, cannonPoint.position, cannonPoint.rotation);
     }
     
     public void DischargeLaser()
     {
-        _charging = false;
+        Charging = false;
         _chargeTimer = chargeTime;
     }
 
     public void ChargeLaser()
     {
-        _charging = true;
+        Charging = true;
+        aimBeam = Instantiate(aimPrefab, cannonPoint.position, cannonPoint.rotation);
+        aimBeam.transform.SetParent(this.transform);
+    }
+
+    public IEnumerator WaitForChargeAndFire()
+    {
+        ChargeLaser();
+        yield return new WaitForSeconds(chargeTime);
+        FireLaser();
+        DischargeLaser();
     }
 }

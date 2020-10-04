@@ -13,14 +13,15 @@ public class SimpleFollower : MonoBehaviour
     
     public float moveSpeed;
     public float turnSpeed;
-    public float visionRadius;
+    public float aggroRadius = 5;
     public float agroDelay;
     
     private Vector3 _startPosition;
     
     private float agroTimer;
-    
-    
+    public float DirectVisionRange = 8; // half a corridor
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -41,7 +42,7 @@ public class SimpleFollower : MonoBehaviour
     private void FixedUpdate()
     {
         // закомментируй это, если нужно чтобы бот нападал только в радиусе своего вижена (старое поведение)
-        if (agroTimer <= 0 && playerDetector.CanSeePlayer(_startPosition))
+        if (agroTimer <= 0 && playerDetector.CanSeePlayer(_startPosition, DirectVisionRange))
         {
             agroTimer = agroDelay;
         }
@@ -54,7 +55,7 @@ public class SimpleFollower : MonoBehaviour
     {
         if (_player == null) return;
         var distance = Vector3.Distance(transform.position, _player.transform.position);
-        if (distance > visionRadius && agroTimer <= 0) return;
+        if (distance > aggroRadius && agroTimer <= 0) return;
         
         var localTarget = transform.InverseTransformPoint(_player.transform.position);
      
@@ -71,7 +72,7 @@ public class SimpleFollower : MonoBehaviour
         var distanceFromStart = Vector3.Distance(_startPosition, _player.transform.position);
 
         var target = _player.transform.position;
-        if (distanceFromStart > visionRadius && agroTimer <= 0)
+        if (distanceFromStart > aggroRadius && agroTimer <= 0)
         {
             target = _startPosition;
         }
