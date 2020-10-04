@@ -102,7 +102,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 259ccc4b162f4e17adc7d15e840d40a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NextPrefab: {fileID: 919132149155446097, guid: 5445e0d4837409746806167b806a3113, type: 3}
+  NextPrefab: {fileID: 1474897946682083767, guid: 375846c7c51141047b80a2352d22378f, type: 3}
   OnDeathPrefab: {fileID: 0}
 --- !u!1001 &3324484526243432408
 PrefabInstance:
