@@ -6948,6 +6948,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4171166502439689284, guid: f18940d18db6dd94a94fb82a81c909a6, type: 3}
+      propertyPath: StartFrom
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 4171166502439689285, guid: f18940d18db6dd94a94fb82a81c909a6, type: 3}
       propertyPath: m_Name
       value: LoopsInitializer
