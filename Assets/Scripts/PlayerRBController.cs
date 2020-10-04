@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerRBController : MonoBehaviour
 {
     public PpVolumeController ppVolume;
-    
+
     public float Speed = 5f;
     public LayerMask Ground;
 
@@ -13,7 +13,7 @@ public class PlayerRBController : MonoBehaviour
     private Vector3 _inputs = Vector3.zero;
 
     private Damageable _damageable;
-    
+
     private void Awake()
     {
         _damageable = GetComponent<Damageable>();
@@ -48,6 +48,6 @@ public class PlayerRBController : MonoBehaviour
 
     void OnTankDie()
     {
-        
+
     }
 }
