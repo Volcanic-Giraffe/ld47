@@ -7,7 +7,7 @@ CapsuleCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6029962470993986303}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 0353d2575d0e1164d899716b7c880f87, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.22
@@ -21,7 +21,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6029962470993986303}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 0353d2575d0e1164d899716b7c880f87, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -75,6 +75,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 033a77d59d7b82b4fa3a35aeef05e6e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ppVolume: {fileID: 0}
   Speed: 5
   Ground:
     serializedVersion: 2
@@ -89,7 +90,7 @@ Rigidbody:
   serializedVersion: 2
   m_Mass: 10
   m_Drag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 20
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
