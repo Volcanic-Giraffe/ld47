@@ -6,6 +6,7 @@ namespace GameState
 {
     public class LoopsInitializer : MonoBehaviour
     {
+        public int StartFrom = 1;
         
         private void Awake()
         {
@@ -15,7 +16,10 @@ namespace GameState
             {
                 AddLoop(loop.gameObject, state);
             }
-            state.Initialize(GameObject.FindGameObjectWithTag("Hero").transform.position, 1);
+            
+            GetComponent<LoopsGenerator>()?.Generate();
+            
+            state.Initialize(GameObject.FindGameObjectWithTag("Hero").transform.position, StartFrom);
         }
 
         private void AddLoop(GameObject loop, GameState state)

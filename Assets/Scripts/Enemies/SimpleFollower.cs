@@ -2,62 +2,115 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+enum BotState {
+    Idle,
+    Agro,
+    WaitForRetreat,
+    Retreat
+}
 
 public class SimpleFollower : MonoBehaviour
 {
     private GameObject _player;
 
     private Rigidbody _rig;
+
+    private Animator _anim;
     
     public PlayerDetector playerDetector;
     
     public float moveSpeed;
     public float turnSpeed;
     public float aggroRadius = 5;
-    public float agroDelay;
+
+    public float retreatWait;
     
     private Vector3 _startPosition;
     
-    private float agroTimer;
     public float DirectVisionRange = 8; // half a corridor
 
+    private BotState _state;
+
+    private float _retreatTimer;
+    
+    private static readonly int IsWalking = Animator.StringToHash("IsWalking");
 
     // Start is called before the first frame update
     void Start()
     {
         _rig = GetComponent<Rigidbody>();
+        _anim = GetComponent<Animator>();
+        
         _startPosition = transform.position;
 
-        agroTimer = 0;
+        _state = BotState.Idle;
         
         _player = playerDetector.GetPlayer();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if (agroTimer > 0) agroTimer -= Time.deltaTime;
+        if (_retreatTimer > 0) _retreatTimer -= Time.fixedDeltaTime;
     }
 
     private void FixedUpdate()
     {
-        // закомментируй это, если нужно чтобы бот нападал только в радиусе своего вижена (старое поведение)
-        if (agroTimer <= 0 && playerDetector.CanSeePlayer(_startPosition, DirectVisionRange))
+        if (_state == BotState.Idle || _state == BotState.WaitForRetreat)
         {
-            agroTimer = agroDelay;
+            if (PlayerIsAngeringMe())
+            {
+                _state = BotState.Agro;
+            }
+        }
+
+        if (_state == BotState.WaitForRetreat)
+        {
+            _anim.SetBool(IsWalking, false);
+            
+            if (_retreatTimer <= 0) _state = BotState.Retreat;
         }
         
-        LookAtPlayer();
-        MoveAtPlayer();
+        if (_state == BotState.Retreat)
+        {
+            LookAtPosition(_startPosition);
+            var dist = MoveAtPosition(_startPosition);
+            if (dist < 0.5) _state = BotState.Idle;
+        }
+
+        if (_state == BotState.Agro)
+        {
+            if (PlayerIsAngeringMe())
+            {
+                LookAtPlayer();
+                MoveAtPlayer();                
+            }
+            else
+            {
+                _state = BotState.WaitForRetreat;
+                _retreatTimer = retreatWait;
+            }
+        }
+    }
+
+    private bool PlayerIsAngeringMe()
+    {
+        if (_player == null) return false;
+        
+        var distance = Vector3.Distance(_startPosition, _player.transform.position);
+        if (distance < aggroRadius) return true;
+        
+        return playerDetector.CanSeePlayer(_startPosition, DirectVisionRange);
     }
 
     private void LookAtPlayer()
     {
         if (_player == null) return;
-        var distance = Vector3.Distance(transform.position, _player.transform.position);
-        if (distance > aggroRadius && agroTimer <= 0) return;
-        
-        var localTarget = transform.InverseTransformPoint(_player.transform.position);
+        LookAtPosition(_player.transform.position);
+    }
+
+    private void LookAtPosition(Vector3 position)
+    {
+        var localTarget = transform.InverseTransformPoint(position);
      
         var angle = Mathf.Atan2(localTarget.x, localTarget.z) * Mathf.Rad2Deg;
  
@@ -65,18 +118,15 @@ public class SimpleFollower : MonoBehaviour
         var deltaRotation = Quaternion.Euler(eulerAngleVelocity * (Time.deltaTime * turnSpeed));
         _rig.MoveRotation(_rig.rotation * deltaRotation);
     }
-
-    private void MoveAtPlayer()
+    
+    private float MoveAtPlayer()
     {
-        if (_player == null) return;
-        var distanceFromStart = Vector3.Distance(_startPosition, _player.transform.position);
+        if (_player == null) return -1f;
+        return MoveAtPosition(_player.transform.position);
+    }
 
-        var target = _player.transform.position;
-        if (distanceFromStart > aggroRadius && agroTimer <= 0)
-        {
-            target = _startPosition;
-        }
-        
+    private float MoveAtPosition(Vector3 target)
+    {
         var targetDir = target - transform.position;
         
         var distance = Vector3.Distance(transform.position, target);
@@ -84,6 +134,13 @@ public class SimpleFollower : MonoBehaviour
         if (distance > 0.5f)
         {
             _rig.MovePosition(_rig.position + targetDir.normalized * (moveSpeed * Time.fixedDeltaTime));
+            _anim.SetBool(IsWalking, true);
         }
+        else
+        {
+            _anim.SetBool(IsWalking, false);
+        }
+
+        return distance;
     }
 }
