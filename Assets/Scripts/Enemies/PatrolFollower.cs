@@ -54,6 +54,10 @@ public class PatrolFollower : MonoBehaviour
             transform.rotation = rotation;
             StartCoroutine(Fire());
         }
+        else
+        {
+            ContinuePatrolling();
+        }
     }
 
     private IEnumerator Fire()
