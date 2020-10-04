@@ -173,7 +173,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerDetector: {fileID: 6282086918063593103}
   moveSpeed: 2
-  turnSpeed: 5
+  turnSpeed: 15
   visionRadius: 5
   agroDelay: 0.5
 --- !u!114 &8717682842788736722
