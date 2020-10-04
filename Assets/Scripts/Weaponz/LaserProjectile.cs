@@ -56,13 +56,14 @@ public class LaserProjectile : Projectile
 
     protected override void DoDamage(GameObject target)
     {
+        if (mainCollider) mainCollider.enabled = false;
         base.DoDamage(target);
     }
 
     protected override void DestroyProjectile()
     {
         fading = true;
-        mainCollider.enabled = false;
+        if (mainCollider) mainCollider.enabled = false;
         fadeTimer = fadeTime;
     }
 }
