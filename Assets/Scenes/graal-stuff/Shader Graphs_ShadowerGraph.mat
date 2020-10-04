@@ -23,5 +23,5 @@ Material:
     m_Colors:
     - CentralSize: {r: 0.25, g: 0.25, b: 0, a: 0}
     - Color_CA2DCF9E: {r: 0.8962264, g: 0.8962264, b: 0.8962264, a: 0}
-    - HeroUV: {r: 0.5349674, g: 0.11677152, b: 0, a: 0}
+    - HeroUV: {r: 0.097384125, g: 0.24704799, b: 0, a: 0}
   m_BuildTextureStacks: []
