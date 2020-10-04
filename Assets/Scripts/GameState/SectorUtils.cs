@@ -5,7 +5,7 @@ namespace GameState
 {
     public class SectorUtils
     {
-        public static int SectorsInCircle = 8;
+        public static int SectorsInCircle = 36;
         
         
 
