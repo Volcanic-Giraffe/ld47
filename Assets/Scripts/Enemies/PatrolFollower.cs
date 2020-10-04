@@ -14,7 +14,7 @@ public class PatrolFollower : MonoBehaviour
     public float patrolDelay;
     public float wallRay;
 
-    private float playerXZmargin = 0.3f; // окно по осям в коротом враг будет видеть игрока (на одной линии, типа)  
+    private float playerXZmargin = 1.5f; // окно по осям в коротом враг будет видеть игрока (на одной линии, типа)  
     
     private Rigidbody _rig;    
 
