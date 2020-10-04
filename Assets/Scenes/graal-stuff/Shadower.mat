@@ -7,13 +7,13 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Shader Graphs_ShadowerGraph
+  m_Name: Shadower
   m_Shader: {fileID: -6465566751694194690, guid: dba45b5fd77debb45b9b9c4935b5c16b, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
+  m_CustomRenderQueue: 3008
   stringTagMap: {}
   disabledShaderPasses: []
   m_SavedProperties:
@@ -22,6 +22,6 @@ Material:
     m_Floats: []
     m_Colors:
     - CentralSize: {r: 0.25, g: 0.25, b: 0, a: 0}
-    - Color_CA2DCF9E: {r: 0.8962264, g: 0.8962264, b: 0.8962264, a: 0}
-    - HeroUV: {r: 0.5678025, g: 0.038527876, b: 0, a: 0}
+    - Color_CA2DCF9E: {r: 0.8584906, g: 0.8584906, b: 0.8584906, a: 0}
+    - HeroUV: {r: 0.974375, g: 0.49786082, b: 0, a: 0}
   m_BuildTextureStacks: []
