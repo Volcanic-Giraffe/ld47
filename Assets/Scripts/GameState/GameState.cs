@@ -30,6 +30,7 @@ namespace GameState
         public List<LoopState> loops = new List<LoopState>();
         
         public int Resources = 0;
+        public int CurrentLoop = 1;
         public float HeroHealth = 0;
 
 
@@ -112,6 +113,7 @@ namespace GameState
             {
                 nextLoopState.EnterBackward(change.SectorIdx, prevLoopState);
             }
+            CurrentLoop = change.NewLoop;
         }
 
         // Вызывается когда объект уничтожен. Если его надо заменить трупом - параметр corpse. 

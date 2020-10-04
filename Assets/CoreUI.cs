@@ -1,10 +1,10 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class CoreUI : MonoBehaviour
 {
     public GameObject Health;
+    public TextMesh LoopsText;
+    public TextMesh ResText;
     int health = 0;
     void Start()
     {
@@ -24,5 +24,8 @@ public class CoreUI : MonoBehaviour
             }
 
         }
+
+        LoopsText.text = GameState.GameState.GetInstance().CurrentLoop.ToString();
+        ResText.text = GameState.GameState.GetInstance().Resources.ToString();
     }
 }
