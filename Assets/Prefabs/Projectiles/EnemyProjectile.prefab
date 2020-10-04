@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2959999405717098526}
   - component: {fileID: 3192853074895007966}
   - component: {fileID: 901420914635030117}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Pew
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -106,7 +106,7 @@ GameObject:
   - component: {fileID: 8303811081815657918}
   - component: {fileID: 923287731165662906}
   - component: {fileID: 5857744420938039543}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: EnemyProjectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -158,3 +158,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Damage: 5
   Explosion: {fileID: 0}
+  hitOnlyTag: 
