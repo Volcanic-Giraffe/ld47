@@ -15,7 +15,7 @@ RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 9
   m_Fog: 1
-  m_FogColor: {r: 0.65080994, g: 0.666729, b: 0.7075472, a: 1}
+  m_FogColor: {r: 0.072668225, g: 0.39481112, b: 0.6698113, a: 1}
   m_FogMode: 3
   m_FogDensity: 0.012
   m_LinearFogStart: 23.8
@@ -5766,6 +5766,14 @@ PrefabInstance:
     - target: {fileID: 4448003219437396477, guid: 5b0e06a0b43c3ba4da76867be2083536, type: 3}
       propertyPath: onHitDuration
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4448003219437396477, guid: 5b0e06a0b43c3ba4da76867be2083536, type: 3}
+      propertyPath: onHitCurve.m_Curve.Array.data[0].value
+      value: 0.032928467
+      objectReference: {fileID: 0}
+    - target: {fileID: 4448003219437396477, guid: 5b0e06a0b43c3ba4da76867be2083536, type: 3}
+      propertyPath: onHitCurve.m_Curve.Array.data[0].time
+      value: 0.01392746
       objectReference: {fileID: 0}
     - target: {fileID: 9188138456808894997, guid: 5b0e06a0b43c3ba4da76867be2083536, type: 3}
       propertyPath: m_Name
