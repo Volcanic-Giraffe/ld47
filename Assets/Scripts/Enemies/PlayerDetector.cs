@@ -28,7 +28,7 @@ public class PlayerDetector : MonoBehaviour
         Ray ray = new Ray(hostPos, (targetPos - hostPos).normalized * range);
         RaycastHit hit;
 
-        int mask = LayerMask.GetMask("Player", "Default");
+        int mask = LayerMask.GetMask("Player", "Wall", "Default");
 
         if (Physics.Raycast(ray, out hit, range, mask))
         {
