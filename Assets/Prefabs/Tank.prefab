@@ -39,6 +39,7 @@ GameObject:
   - component: {fileID: 6556511592455308977}
   - component: {fileID: 5455610667488535249}
   - component: {fileID: 3069091465851437537}
+  - component: {fileID: 5454817987353568231}
   m_Layer: 10
   m_Name: Tank
   m_TagString: Hero
@@ -110,6 +111,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Health: 15
   MaxHealth: 25
+--- !u!114 &5454817987353568231
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6147246771986685831}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc25aabe44438124b849e1e275fa1bc2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Selected: 0
+  CurrentTurret: {fileID: 0}
+  TurretPoint: {fileID: 7233158977465588530}
+  TurretPrefabs:
+  - {fileID: 368135457057002257, guid: c8f409e3f142dc84bafe41dfc4b67066, type: 3}
+  - {fileID: 368135457057002257, guid: 5bc3864951afc064fb8517721b32cdb0, type: 3}
+  - {fileID: 368135457057002257, guid: 61326321d3f8e9548acda1507fd9a13a, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1 &7915555035004629798
 GameObject:
   m_ObjectHideFlags: 0

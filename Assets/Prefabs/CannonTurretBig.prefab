@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1803461453422706225}
   - component: {fileID: 3156399554815723944}
   m_Layer: 0
-  m_Name: BFGTurret
+  m_Name: CannonTurretBig
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29,7 +29,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 2303903718388234769}
+  - {fileID: 8657724159225989042}
   - {fileID: 7567491620781313941}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -59,10 +59,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 921a462c5504acd4281af895728cd6b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CannonPoint: {fileID: 7567491620781313941}
-  Projectile: {fileID: 1847650053701656589, guid: 8e6674a84bc024245ad0c93307f32203, type: 3}
-  ShotSpeed: 30
-  Firerate: 0.1
+  CannonPoint:
+  - {fileID: 7567491620781313941}
+  Projectile: {fileID: 1847650053701656589, guid: be122abea2716234b9867768fd7e0dfe, type: 3}
+  Flash: {fileID: 7126102090859329453, guid: e420179e56eae84478f3e4cda1112443, type: 3}
+  ShotSpeed: 15
+  Firerate: 1.5
 --- !u!1 &4819127656175470029
 GameObject:
   m_ObjectHideFlags: 0
@@ -87,91 +89,71 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4819127656175470029}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.205, z: 0.611}
+  m_LocalPosition: {x: -0.007, y: 0.264, z: 0.586}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5090495004382035729}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &1761933594290691578
+--- !u!1001 &9199960401771946073
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 5090495004382035729}
     m_Modifications:
-    - target: {fileID: -8679921383154817045, guid: 0893a6c3ee5ed864d991ffd2e1a3d285, type: 3}
+    - target: {fileID: -8679921383154817045, guid: 2f37c483cf2179949b88b48e78075346, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 0893a6c3ee5ed864d991ffd2e1a3d285, type: 3}
+    - target: {fileID: -8679921383154817045, guid: 2f37c483cf2179949b88b48e78075346, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.003
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 0893a6c3ee5ed864d991ffd2e1a3d285, type: 3}
+    - target: {fileID: -8679921383154817045, guid: 2f37c483cf2179949b88b48e78075346, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.231
+      value: 0.181
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 0893a6c3ee5ed864d991ffd2e1a3d285, type: 3}
+    - target: {fileID: -8679921383154817045, guid: 2f37c483cf2179949b88b48e78075346, type: 3}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 0893a6c3ee5ed864d991ffd2e1a3d285, type: 3}
+    - target: {fileID: -8679921383154817045, guid: 2f37c483cf2179949b88b48e78075346, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 0893a6c3ee5ed864d991ffd2e1a3d285, type: 3}
+    - target: {fileID: -8679921383154817045, guid: 2f37c483cf2179949b88b48e78075346, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 0893a6c3ee5ed864d991ffd2e1a3d285, type: 3}
+    - target: {fileID: -8679921383154817045, guid: 2f37c483cf2179949b88b48e78075346, type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 0893a6c3ee5ed864d991ffd2e1a3d285, type: 3}
+    - target: {fileID: -8679921383154817045, guid: 2f37c483cf2179949b88b48e78075346, type: 3}
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 0893a6c3ee5ed864d991ffd2e1a3d285, type: 3}
+    - target: {fileID: -8679921383154817045, guid: 2f37c483cf2179949b88b48e78075346, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 0893a6c3ee5ed864d991ffd2e1a3d285, type: 3}
+    - target: {fileID: -8679921383154817045, guid: 2f37c483cf2179949b88b48e78075346, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 0893a6c3ee5ed864d991ffd2e1a3d285, type: 3}
+    - target: {fileID: -8679921383154817045, guid: 2f37c483cf2179949b88b48e78075346, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 919132149155446097, guid: 0893a6c3ee5ed864d991ffd2e1a3d285, type: 3}
+    - target: {fileID: 919132149155446097, guid: 2f37c483cf2179949b88b48e78075346, type: 3}
       propertyPath: m_Name
-      value: tank_turret1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1151388028547126963, guid: 0893a6c3ee5ed864d991ffd2e1a3d285, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1151388028547126963, guid: 0893a6c3ee5ed864d991ffd2e1a3d285, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1151388028547126963, guid: 0893a6c3ee5ed864d991ffd2e1a3d285, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1151388028547126963, guid: 0893a6c3ee5ed864d991ffd2e1a3d285, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1151388028547126963, guid: 0893a6c3ee5ed864d991ffd2e1a3d285, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
+      value: tank_turret_big
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 0893a6c3ee5ed864d991ffd2e1a3d285, type: 3}
---- !u!4 &2303903718388234769 stripped
+  m_SourcePrefab: {fileID: 100100000, guid: 2f37c483cf2179949b88b48e78075346, type: 3}
+--- !u!4 &8657724159225989042 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 0893a6c3ee5ed864d991ffd2e1a3d285, type: 3}
-  m_PrefabInstance: {fileID: 1761933594290691578}
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 2f37c483cf2179949b88b48e78075346, type: 3}
+  m_PrefabInstance: {fileID: 9199960401771946073}
   m_PrefabAsset: {fileID: 0}

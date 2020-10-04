@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 3578028034209567438}
   - component: {fileID: 23693524485606590}
   m_Layer: 13
-  m_Name: PlayerProjectile
+  m_Name: SmallPlayerProjectile
   m_TagString: Hero
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -32,7 +32,7 @@ Transform:
   m_GameObject: {fileID: 1847650053701656589}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -2.03, y: 0.957, z: 1.669}
-  m_LocalScale: {x: 0.059935946, y: 0.059935946, z: 0.15951963}
+  m_LocalScale: {x: 0.045330063, y: 0.045330063, z: 0.12904412}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -154,6 +154,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3755892347dc9f4b9ca22fbe5cb87eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Damage: 5
-  Explosion: {fileID: 7126102090859329453, guid: d49269bfb6f2058459b5cc28d3a99e99, type: 3}
+  Damage: 1.5
+  Explosion: {fileID: 7126102090859329453, guid: e420179e56eae84478f3e4cda1112443, type: 3}
   hitOnlyTag: 
