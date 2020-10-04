@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4171166502439689287}
   - component: {fileID: 4171166502439689284}
+  - component: {fileID: 4281254622059193748}
   m_Layer: 0
   m_Name: LoopsInitializer
   m_TagString: Untagged
@@ -43,3 +44,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c37056adf394836950881666e51ab24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  StartFrom: 1
+--- !u!114 &4281254622059193748
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4171166502439689285}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a89d281293164a4783590f6756112adc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Prefabs:
+  - Prefab: {fileID: 0}
+    Probability_100_Percent: 0
+  - Prefab: {fileID: 665760121173418378, guid: fe7c86d3447a1c64497e563729f8b05c, type: 3}
+    Probability_100_Percent: 1
+  - Prefab: {fileID: 1474897946682083767, guid: 75e7993144662f2459128db205ca096f, type: 3}
+    Probability_100_Percent: 1
+  - Prefab: {fileID: 1597173641344653236, guid: 90a10ebca3317f249b709975e99693d6, type: 3}
+    Probability_100_Percent: 1
+  - Prefab: {fileID: 5885600213333271911, guid: b69b91d372ae90c4dbb522796c043b19, type: 3}
+    Probability_100_Percent: 1
+  - Prefab: {fileID: 0}
+    Probability_100_Percent: 1
+  - Prefab: {fileID: 1474897946682083767, guid: 75e7993144662f2459128db205ca096f, type: 3}
+    Probability_100_Percent: 0
+  - Prefab: {fileID: 1597173641344653236, guid: 90a10ebca3317f249b709975e99693d6, type: 3}
+    Probability_100_Percent: 0
+  - Prefab: {fileID: 5885600213333271911, guid: b69b91d372ae90c4dbb522796c043b19, type: 3}
+    Probability_100_Percent: 0
+  - Prefab: {fileID: 0}
+    Probability_100_Percent: 0
+  LevelsToGenerate: 20
