@@ -14,9 +14,14 @@ public class Projectile : MonoBehaviour
     
     void OnCollisionEnter(Collision collision)
     {
-        var damageable = collision.gameObject.GetComponent<Damageable>();
+        DoDamage(collision.gameObject);
+    }
 
-        bool validTag = string.IsNullOrEmpty(hitOnlyTag) || collision.gameObject.CompareTag(hitOnlyTag);
+    protected virtual void DoDamage(GameObject target)
+    {
+        var damageable = target.GetComponent<Damageable>();
+
+        bool validTag = string.IsNullOrEmpty(hitOnlyTag) || target.CompareTag(hitOnlyTag);
         
         if (damageable != null && validTag && !hitOnce)
         {
@@ -25,6 +30,11 @@ public class Projectile : MonoBehaviour
         }
         if (Explosion != null && validTag) Instantiate(Explosion, this.transform.position, Quaternion.identity);
         
+        DestroyProjectile();
+    }
+
+    protected virtual void DestroyProjectile()
+    {
         Destroy(gameObject);
     }
 }
