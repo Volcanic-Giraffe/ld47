@@ -20,12 +20,12 @@ Material:
     serializedVersion: 3
     m_TexEnvs: []
     m_Floats:
-    - Vector1_48F7780C: 0.26
+    - Vector1_48F7780C: 0.1
     m_Colors:
     - CentralSize: {r: 0.25, g: 0.25, b: 0, a: 0}
-    - Color_7FF80FAF: {r: 0.03426487, g: 0.6603774, b: 0.4558808, a: 0}
-    - Color_8D393C20: {r: 0.282353, g: 5.270588, b: 3.639216, a: 1}
+    - Color_7FF80FAF: {r: 0.23584908, g: 0.16146488, b: 0.043387335, a: 0}
+    - Color_8D393C20: {r: 3.3389587, g: 1.9868186, b: 0.30354172, a: 1}
     - Color_99766AD3: {r: 1, g: 1, b: 1, a: 1}
-    - Color_CA2DCF9E: {r: 0.8980392, g: 0.8980392, b: 0.8980392, a: 0}
-    - HeroUV: {r: 0.87946814, g: 0.12867165, b: 0, a: 0}
+    - Color_CA2DCF9E: {r: 0.4528302, g: 0.2924451, b: 0.11747954, a: 0}
+    - HeroUV: {r: 0.7531696, g: 0.86547065, b: 0, a: 0}
   m_BuildTextureStacks: []
