@@ -37,7 +37,7 @@ namespace GameState
             {
                 Color.green, Color.blue, Color.red, Color.magenta
             };
-            var sectorAngle = 30;
+            var sectorAngle = 15;
             
             for (int i = 0; i < 360; i += sectorAngle)
             {

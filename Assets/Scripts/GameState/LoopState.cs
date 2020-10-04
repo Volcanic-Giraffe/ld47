@@ -23,6 +23,7 @@ namespace GameState
         
         public void EnterForward(int sectorIdx, LoopState previousLoopState)
         {
+            previousLoopState.CheckDestroyed();
             foreach (var obj in previousLoopState.Objects.ToList())
             {
                 var loopable = obj.CurrentObject.GetComponent<ILoopable>();
@@ -50,8 +51,8 @@ namespace GameState
                     }
 
                 }
-                GameObject.Destroy(obj.CurrentObject);
                 previousLoopState.Objects.Remove(obj);
+                GameObject.Destroy(obj.CurrentObject);
             }
 
             CreateObjects(sectorIdx);
@@ -63,6 +64,11 @@ namespace GameState
             foreach (var prefab in Prefabs.ToList())
             {
                 if (!SectorUtils.MatchSector(prefab.Position, sectorIdx)) continue;
+                if (Objects.Exists(o => o.ID == prefab.ID))
+                {
+                    Debug.Log($"Here is already object with same ID {prefab.ID} in this loop, ignore to prevent PARADOX");
+                    continue;
+                }
                 
                 var go = GameObject.Instantiate(prefab.Prefab);
                 go.transform.position = prefab.Position;
@@ -86,6 +92,7 @@ namespace GameState
 
         public void EnterBackward(int sectorIdx, LoopState nextLoopState)
         {
+            nextLoopState.CheckDestroyed();
             nextLoopState.Prefabs.RemoveAll(p => SectorUtils.MatchSector(p.Position, sectorIdx) && !p.IsInitialOne);
             foreach (var obj in nextLoopState.Objects.ToList())
             {
@@ -94,10 +101,15 @@ namespace GameState
                 if (!SectorUtils.MatchSector(position, sectorIdx)) continue;
 
                 Debug.Log($"Remove object {obj.CurrentObject} #{obj.ID} from previous loop");
-                GameObject.Destroy(obj.CurrentObject);
                 nextLoopState.Objects.Remove(obj);
+                GameObject.Destroy(obj.CurrentObject);
             }
             CreateObjects(sectorIdx);
+        }
+
+        private void CheckDestroyed()
+        {
+            Objects.RemoveAll(it => it.CurrentObject == null);
         }
         
     }

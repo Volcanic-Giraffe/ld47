@@ -1,4 +1,6 @@
 ﻿using System;
+using GameState;
+using UnityEditor;
 using UnityEngine;
 
 namespace Loop
@@ -19,7 +21,15 @@ namespace Loop
             if (OnDeathPrefab == null) return;
             var corpse = Instantiate(OnDeathPrefab);
             corpse.transform.position = transform.position;
-            GameState.GameState.GetInstance().ReplaceObject(gameObject, corpse);
+            if (!GameState.GameState.GetInstance().OnObjectDestroy(gameObject, corpse))
+            {
+                Destroy(corpse);
+            }
+        }
+
+        private void OnDrawGizmos()
+        {
+            Handles.Label(transform.position, $"idx={SectorUtils.PositionToSectorIdx(_initPosition)} loop={GameState.GameState.GetInstance().GetLoopByIdx(SectorUtils.PositionToSectorIdx(_initPosition))}");
         }
 
         public object SaveState()

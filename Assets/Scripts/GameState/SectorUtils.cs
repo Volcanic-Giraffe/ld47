@@ -27,7 +27,7 @@ namespace GameState
 
         public static bool MatchSector(Vector3 position, int sectorIdx)
         {
-            Assert.AreEqual(position.y, 0);
+            //Assert.AreEqual(position.y, 0);
             return PositionToSectorIdx(position) == sectorIdx;
         }
         
