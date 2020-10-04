@@ -17,11 +17,15 @@ namespace Shadow
         {
             //todo: do it better...
 
-            var pos = _hero.transform.position;
-            var u = (pos.x / transform.localScale.x) + 0.5f;
-            var v = (pos.z / transform.localScale.y) + 0.5f;
-            
-            ShadowerMaterial.SetVector("HeroUV", new Vector4(u, v));
+
+            if (_hero != null)
+            {
+                var pos = _hero.transform.position;
+                var u = (pos.x / transform.localScale.x) + 0.5f;
+                var v = (pos.z / transform.localScale.y) + 0.5f;
+
+                ShadowerMaterial.SetVector("HeroUV", new Vector4(u, v));
+            }
         }
     }
 }

@@ -19,9 +19,12 @@ namespace GameState
 
         private void Update()
         {
-            var newPisition = _hero.transform.position;
-            _state.OnHeroMove(_prevHeroPosition, newPisition);
-            _prevHeroPosition = newPisition;
+            if (_hero != null)
+            {
+                var newPisition = _hero.transform.position;
+                _state.OnHeroMove(_prevHeroPosition, newPisition);
+                _prevHeroPosition = newPisition;
+            }
         }
 
         private void OnDrawGizmos()
