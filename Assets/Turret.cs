@@ -3,17 +3,20 @@
 public class Turret : MonoBehaviour
 {
     public float RotationSpeed = 0.5f;
+
+    private Camera _camera;
+    
     // Start is called before the first frame update
     void Start()
     {
-
+        _camera = Camera.main;
     }
 
     // Update is called once per frame
     void Update()
     {
         RaycastHit hit;
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        Ray ray = _camera.ScreenPointToRay(Input.mousePosition);
 
         if (Physics.Raycast(ray, out hit, 50, ~LayerMask.NameToLayer("BasePlane")))
         {
