@@ -43,7 +43,6 @@ public class PlayerRBController : MonoBehaviour
 
     void OnTankHit()
     {
-        Debug.Log("### TANK HIT!");
         ppVolume.AnimateOnHit();
     }
 
