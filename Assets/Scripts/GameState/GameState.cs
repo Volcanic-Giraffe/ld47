@@ -112,7 +112,9 @@ namespace GameState
             }
         }
 
-        public void ReplaceObject(GameObject gameObject, GameObject corpse)
+        // Вызывается когда объект уничтожен. Если его надо заменить трупом - параметр corpse. 
+        // Возвращает true если заменил на труп
+        public bool OnObjectDestroy(GameObject gameObject, GameObject corpse = null)
         {
             var loopable = gameObject.GetComponent<ILoopable>();
 
@@ -121,10 +123,31 @@ namespace GameState
                 var loop = loops[loopId];
                 var objectInLoop = loop.Objects.Find(o => o.CurrentObject == gameObject);
                 if (objectInLoop == null) continue;
-                objectInLoop.CurrentObject = corpse;
-                (corpse.GetComponent<ILoopable>())?.RestorePosition(loopable.GetPosition());
-                Debug.Log($"Replace {gameObject} #{objectInLoop.ID} with {corpse} at loop {loopId}");
+
+                if (corpse != null)
+                {
+                    // если труп надо положить в другой сектор, то этот сектор должен быть в том же лупе, что и оригинальный юнит
+                    // иначе будут глитчи стопудово (будет робот в одном секторе и труп от него в другом одновременно)
+                    // если этот сектор в другом лупе, то я труп вообще не положу
+                    var actualCorpseLoopId = GetLoopByIdx(SectorUtils.PositionToSectorIdx(corpse.transform.position));
+
+                    if (actualCorpseLoopId == loopId)
+                    {
+                        objectInLoop.CurrentObject = corpse;
+                        (corpse.GetComponent<ILoopable>())?.RestorePosition(corpse.transform.position);
+                        Debug.Log($"Replace {gameObject} #{objectInLoop.ID} with {corpse} at loop {loopId}");
+
+                        return true;
+                    }
+                }
+                else
+                {
+                    loop.Objects.Remove(objectInLoop);
+                }
             }
+
+            return false;
         }
+        
     }
 }
