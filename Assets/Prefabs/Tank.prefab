@@ -76,7 +76,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ppVolume: {fileID: 0}
-  Speed: 5
+  Speed: 4
   Ground:
     serializedVersion: 2
     m_Bits: 4096
@@ -108,7 +108,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 136b236178e72ba47afb3e10d7bf99e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Health: 20
+  Health: 15
 --- !u!1 &7915555035004629798
 GameObject:
   m_ObjectHideFlags: 0
