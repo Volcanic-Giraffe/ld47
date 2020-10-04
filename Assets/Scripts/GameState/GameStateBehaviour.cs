@@ -7,12 +7,14 @@ namespace GameState
     public class GameStateBehaviour : MonoBehaviour
     {
         private GameObject _hero;
+        private Damageable _heroHealth;
         private GameState _state;
         private Vector3 _prevHeroPosition;
 
         private void Awake()
         {
             _hero = GameObject.FindGameObjectWithTag("Hero");
+            _heroHealth = _hero.GetComponent<Damageable>();
             _state = GameState.GetInstance();
             _prevHeroPosition = _hero.transform.position;
         }
@@ -25,6 +27,7 @@ namespace GameState
                 _state.OnHeroMove(_prevHeroPosition, newPisition);
                 _prevHeroPosition = newPisition;
             }
+            _state.HeroHealth = _heroHealth != null ? _heroHealth.Health : 0;
         }
 
         private void OnDrawGizmos()

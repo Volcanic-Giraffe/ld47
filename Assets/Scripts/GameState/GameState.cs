@@ -7,6 +7,7 @@ namespace GameState
 {
     public class SectorChangeLoop
     {
+        
         public int SectorIdx;
         public int NewLoop;
         public int? PrevLoop;
@@ -28,8 +29,9 @@ namespace GameState
      
         public List<LoopState> loops = new List<LoopState>();
         
-        
-        
+        public int Resources = 0;
+        public float HeroHealth = 0;
+
 
         public int GetLoopByIdx(int idx)
         {
