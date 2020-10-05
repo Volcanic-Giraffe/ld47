@@ -10,7 +10,7 @@ public class SmolExplosion : MonoBehaviour
 
     private void Start()
     {
-        if (impactSound != null) AudioSource.PlayClipAtPoint(impactSound, transform.position);
+        if (impactSound != null) AudioSource.PlayClipAtPoint(impactSound, Camera.main.transform.position);
     }
 
     public void Die(float theValue)
