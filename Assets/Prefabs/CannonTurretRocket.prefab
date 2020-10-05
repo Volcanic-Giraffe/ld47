@@ -52,7 +52,7 @@ MonoBehaviour:
   - {fileID: 7299338246845211792}
   - {fileID: 4113416672455388221}
   - {fileID: 8246749912666167792}
-  Projectile: {fileID: 1847650053701656589, guid: d04b48ee69bd5f14ea28fd21360c678f, type: 3}
+  Projectile: {fileID: 8422587446137361086, guid: 4b7bb08c7dad0884c8af717881292ac4, type: 3}
   Flash: {fileID: 7126102090859329453, guid: e420179e56eae84478f3e4cda1112443, type: 3}
   ShotSpeed: 12
   Firerate: 0.2
@@ -168,7 +168,7 @@ MonoBehaviour:
   - {fileID: 8520398180557767245}
   - {fileID: 6485998748965552600}
   - {fileID: 1946009028542900447}
-  Projectile: {fileID: 1847650053701656589, guid: d04b48ee69bd5f14ea28fd21360c678f, type: 3}
+  Projectile: {fileID: 8422587446137361086, guid: 4b7bb08c7dad0884c8af717881292ac4, type: 3}
   Flash: {fileID: 7126102090859329453, guid: e420179e56eae84478f3e4cda1112443, type: 3}
   ShotSpeed: 12
   Firerate: 0.2
