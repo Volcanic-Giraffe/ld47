@@ -60,7 +60,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b5ce9daf76f5f2459cb5acc8b486ce4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  price: 50
+  price: 80
   description: Fire Rate + 10%
   hoverGood: {fileID: 2308017952884590075}
   hoverBad: {fileID: 7458886933440004031}

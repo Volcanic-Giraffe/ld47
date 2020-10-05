@@ -60,8 +60,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ba5f8b69fd61f642857245a625072c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  price: 500
-  description: Protolife
+  price: 400
+  description: Explosion immunity
   hoverGood: {fileID: 6786546836939749225}
   hoverBad: {fileID: 7629456242359553191}
   purchaseEffect: {fileID: 2381677092008072179, guid: bdbf608500b6f8c4e93c4a1c5f098a25, type: 3}
