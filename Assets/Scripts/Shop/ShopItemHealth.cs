@@ -6,6 +6,6 @@ public class ShopItemHealth : ShopItem
 {
     public override void OnPurchased()
     {
-        heroHealth.Heal(1);
+        heroHealth.Heal(5);
     }
 }

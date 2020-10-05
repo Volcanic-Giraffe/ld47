@@ -213,10 +213,8 @@ MonoBehaviour:
   AOECoefficient: 0.8
   MaxHealth: 30
   soundsHit:
-  - {fileID: 8300000, guid: 61b465b5c34db314d9898bae32e172f4, type: 3}
-  - {fileID: 8300000, guid: fb81fc7e10e48854ebaf66a135ee1e94, type: 3}
-  - {fileID: 8300000, guid: 4b3a81d0c248eb04b95d0253cda852a1, type: 3}
-  - {fileID: 8300000, guid: c734bd40c399b4e479bfcbdd78c77396, type: 3}
+  - {fileID: 8300000, guid: 0fe5e6171aea45e4c8ced6649f3d3d19, type: 3}
+  - {fileID: 8300000, guid: aab611e888c70dc4d8bc0eb40f1452c1, type: 3}
 --- !u!114 &5454817987353568231
 MonoBehaviour:
   m_ObjectHideFlags: 0
