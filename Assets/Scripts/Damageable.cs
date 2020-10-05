@@ -39,10 +39,9 @@ public class Damageable : MonoBehaviour
     {
         OnHit?.Invoke();
 
-        if (_audio != null && soundsHit != null && soundsHit.Length > 0)
+        if (soundsHit != null && soundsHit.Length > 0)
         {
-            _audio.clip = soundsHit[UnityEngine.Random.Range(0, soundsHit.Length)];
-            _audio.Play();
+            AudioSource.PlayClipAtPoint(soundsHit[UnityEngine.Random.Range(0, soundsHit.Length)], Camera.main.transform.position, 0.5f);
         }
         
         Debug.Log($"Damaging {gameObject.name} with {who.name} by {(aoe ? amount * AOECoefficient : amount)}.");
