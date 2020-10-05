@@ -2532,6 +2532,14 @@ PrefabInstance:
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4551463549988175282, guid: 17e439cda141c274e86c88e90f15d0bc, type: 3}
+      propertyPath: shadower
+      value: 
+      objectReference: {fileID: 3245923592459471915}
+    - target: {fileID: 4551463549988175282, guid: 17e439cda141c274e86c88e90f15d0bc, type: 3}
+      propertyPath: gameStateBeh
+      value: 
+      objectReference: {fileID: 1212081881748576606}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 17e439cda141c274e86c88e90f15d0bc, type: 3}
 --- !u!1001 &857721173
@@ -6353,6 +6361,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 26312aa007e1487478af0c056f9be2be, type: 3}
+--- !u!114 &3245923592459471915 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3245923591571084100, guid: 26312aa007e1487478af0c056f9be2be, type: 3}
+  m_PrefabInstance: {fileID: 3245923592459471914}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 659d2779ea824899aeadef28f93aec88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &3948796662359274151
 PrefabInstance:
   m_ObjectHideFlags: 0
