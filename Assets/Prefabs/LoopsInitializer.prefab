@@ -45,6 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   StartFrom: 1
+  StartSectorPoint: {fileID: 0}
 --- !u!114 &4281254622059193748
 MonoBehaviour:
   m_ObjectHideFlags: 0

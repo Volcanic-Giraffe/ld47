@@ -7,6 +7,7 @@ namespace GameState
     public class LoopsInitializer : MonoBehaviour
     {
         public int StartFrom = 1;
+        public GameObject StartSectorPoint;
         
         private void Awake()
         {
@@ -19,8 +20,9 @@ namespace GameState
             }
             
             GetComponent<LoopsGenerator>()?.Generate();
-            
-            state.Initialize(GameObject.FindGameObjectWithTag("Hero").transform.position, StartFrom);
+
+            var pos = StartSectorPoint ? StartSectorPoint.transform.position : GameObject.FindGameObjectWithTag("Hero").transform.position;
+            state.Initialize(pos, StartFrom);
         }
 
         private void AddLoop(GameObject loop, GameState state)

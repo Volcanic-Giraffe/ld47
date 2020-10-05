@@ -38,9 +38,12 @@ namespace GameState
             return sectorIdxToLoop[idx % SectorUtils.SectorsInCircle];
         }
 
-        public void Initialize(Vector3 heroPosition, int loop)
+        public void Initialize(Vector3 heroPosition, int loop, int idx = -1)
         {
-            int idx = SectorUtils.PositionToSectorIdx(heroPosition);
+            if (idx == -1)
+            {
+                idx = SectorUtils.PositionToSectorIdx(heroPosition);
+            }
 
             for (int i = idx; i < idx + SectorUtils.SectorsInCircle/2+1; i++)
             {
