@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class ExitZone : MonoBehaviour
 {
-    private void OnCollisionEnter(Collision collision)
+    
+    private void OnTriggerEnter(Collider collider)
     {
-        if (collision.collider.tag == "Hero")
+        if (collider.tag == "Hero")
         {
             // TOdO EXIT
             Destroy(this.gameObject);
