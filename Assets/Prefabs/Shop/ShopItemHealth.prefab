@@ -61,7 +61,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   price: 50
-  description: Full Health
+  description: +1 HP
   hoverGood: {fileID: 2821782657902308300}
   hoverBad: {fileID: 333985433613120053}
   purchaseEffect: {fileID: 2381677092008072179, guid: bdbf608500b6f8c4e93c4a1c5f098a25, type: 3}

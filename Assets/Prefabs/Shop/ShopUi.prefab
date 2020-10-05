@@ -619,15 +619,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f332f96195cc02e49a1dfac37fc4ee94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemPrefabs:
-  - {fileID: 2424174191788696298, guid: 2915c81423f365d41ae2935c62b4cdb7, type: 3}
-  - {fileID: 2232631676128801187, guid: 25921d1d35868964b9a6e92d63bc0c60, type: 3}
-  - {fileID: 7265335614460158323, guid: 91fb8482eba62b44dad9b812abc4e4da, type: 3}
-  - {fileID: 3601655899093734189, guid: d5564377784f1384e98b26f429c3c826, type: 3}
+  towerPrefabs:
   - {fileID: 3927099023357766458, guid: 834c087a15c90d34c821d512ef1b7bb3, type: 3}
   - {fileID: 6959904587306942318, guid: b36ec620daf3ef048bad8af171d191f1, type: 3}
   - {fileID: 1490952086368504702, guid: ec2236a8999c8c04eb6f567bcabe00af, type: 3}
   - {fileID: 745913677616687926, guid: da04dd9dc79733742bed168bac9284f4, type: 3}
+  itemPrefabs:
+  - {fileID: 2424174191788696298, guid: 2915c81423f365d41ae2935c62b4cdb7, type: 3}
+  - {fileID: 2232631676128801187, guid: 25921d1d35868964b9a6e92d63bc0c60, type: 3}
+  - {fileID: 7265335614460158323, guid: 91fb8482eba62b44dad9b812abc4e4da, type: 3}
+  - {fileID: 2232631676128801187, guid: 25921d1d35868964b9a6e92d63bc0c60, type: 3}
+  - {fileID: 7265335614460158323, guid: 91fb8482eba62b44dad9b812abc4e4da, type: 3}
+  - {fileID: 2424174191788696298, guid: 2915c81423f365d41ae2935c62b4cdb7, type: 3}
+  - {fileID: 2424174191788696298, guid: 2915c81423f365d41ae2935c62b4cdb7, type: 3}
+  - {fileID: 2424174191788696298, guid: 2915c81423f365d41ae2935c62b4cdb7, type: 3}
   itemSlots:
   - {fileID: 3389621278789397545}
   - {fileID: 3504668211423798794}

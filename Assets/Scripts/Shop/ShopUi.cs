@@ -6,6 +6,8 @@ using Random = UnityEngine.Random;
 
 public class ShopUi : MonoBehaviour
 {
+    public GameObject[] towerPrefabs;
+    
     public GameObject[] itemPrefabs;
 
     public Transform[] itemSlots;
@@ -86,6 +88,9 @@ public class ShopUi : MonoBehaviour
 
     public void RandomizeLots()
     {
+        var towerItem = towerPrefabs[Random.Range(0, towerPrefabs.Length)];
+        AssignItemToSlot(0, towerItem); // first slot is new Tower
+
         GameObject tempGO;
 
         for (int i = 0; i < itemPrefabs.Length; i++) {
@@ -95,7 +100,8 @@ public class ShopUi : MonoBehaviour
             itemPrefabs[i] = tempGO;
         }
 
-        for (var i = 0; i < slots; i++)
+        // start from 1, since 0 is tower slot
+        for (var i = 1; i < slots; i++)
         {
             var item = itemPrefabs[i];
             AssignItemToSlot(i, item);
