@@ -14,7 +14,8 @@ namespace GameState
 
             foreach (Transform loop in transform)
             {
-                AddLoop(loop.gameObject, state);
+                if(loop.gameObject.activeInHierarchy)
+                    AddLoop(loop.gameObject, state);
             }
             
             GetComponent<LoopsGenerator>()?.Generate();
