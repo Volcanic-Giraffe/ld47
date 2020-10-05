@@ -12,7 +12,7 @@ public class CoreMain : MonoBehaviour
     
     void Start()
     {
-        ShowShopUi();
+        ShowInfoUi();
     }
 
     private void OnTriggerEnter(Collider other)

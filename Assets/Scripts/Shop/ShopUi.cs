@@ -86,9 +86,18 @@ public class ShopUi : MonoBehaviour
 
     public void RandomizeLots()
     {
+        GameObject tempGO;
+
+        for (int i = 0; i < itemPrefabs.Length; i++) {
+            int rnd = Random.Range(0, itemPrefabs.Length);
+            tempGO = itemPrefabs[rnd];
+            itemPrefabs[rnd] = itemPrefabs[i];
+            itemPrefabs[i] = tempGO;
+        }
+
         for (var i = 0; i < slots; i++)
         {
-            var item = itemPrefabs[Random.Range(0, itemPrefabs.Length)]; // todo: no repeats!
+            var item = itemPrefabs[i];
             AssignItemToSlot(i, item);
         }
     }

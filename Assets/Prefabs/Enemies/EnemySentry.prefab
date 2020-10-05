@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 770474386361059978}
   - component: {fileID: 2606336146457799588}
   - component: {fileID: 3028171723274089371}
+  - component: {fileID: 7305500762423801159}
   m_Layer: 14
   m_Name: EnemySentry
   m_TagString: Enemy
@@ -118,6 +119,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Explosion: {fileID: 7126102090859329453, guid: 85a8c0b4d736bbe458815923960f7c13, type: 3}
+--- !u!114 &7305500762423801159
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1474897946682083767}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74ff488d98fcd094ea4277901584f91b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  resourcePrefab: {fileID: 1649713919260475044, guid: 0565813916b2ee34f97c809795128e73, type: 3}
 --- !u!1001 &5258208323412288329
 PrefabInstance:
   m_ObjectHideFlags: 0
