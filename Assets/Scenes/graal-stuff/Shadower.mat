@@ -19,7 +19,8 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs: []
-    m_Floats: []
+    m_Floats:
+    - Vector1_48F7780C: 1
     m_Colors:
     - CentralSize: {r: 0.25, g: 0.25, b: 0, a: 0}
     - Color_CA2DCF9E: {r: 0.8584906, g: 0.8584906, b: 0.8584906, a: 0}
