@@ -13,6 +13,8 @@ namespace GameState
 
         private void Awake()
         {
+            // might be easier but I'm lazy
+            // do not remove hero tag from hero body bcs resource check it on collide!
             var hs = GameObject.FindGameObjectsWithTag("Hero");
             foreach (var he in hs)
             {
