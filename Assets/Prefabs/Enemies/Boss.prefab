@@ -367,6 +367,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 495803640070288576}
     m_Modifications:
+    - target: {fileID: 614024917833747314, guid: 75e7993144662f2459128db205ca096f, type: 3}
+      propertyPath: seeAlways
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1474897946682083767, guid: 75e7993144662f2459128db205ca096f, type: 3}
       propertyPath: m_Name
       value: EnemySentry_L
@@ -415,6 +419,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8248080693241708795, guid: 75e7993144662f2459128db205ca096f, type: 3}
+      propertyPath: MaxHealth
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 8248080693241708795, guid: 75e7993144662f2459128db205ca096f, type: 3}
+      propertyPath: Health
+      value: 200
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 75e7993144662f2459128db205ca096f, type: 3}
 --- !u!4 &1116106513521275732 stripped
@@ -440,6 +452,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 495803640070288576}
     m_Modifications:
+    - target: {fileID: 614024917833747314, guid: 75e7993144662f2459128db205ca096f, type: 3}
+      propertyPath: seeAlways
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1474897946682083767, guid: 75e7993144662f2459128db205ca096f, type: 3}
       propertyPath: m_Name
       value: EnemySentry_R
@@ -488,6 +504,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8248080693241708795, guid: 75e7993144662f2459128db205ca096f, type: 3}
+      propertyPath: Health
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 8248080693241708795, guid: 75e7993144662f2459128db205ca096f, type: 3}
+      propertyPath: MaxHealth
+      value: 200
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 75e7993144662f2459128db205ca096f, type: 3}
 --- !u!4 &920709155585308381 stripped
@@ -516,6 +540,10 @@ PrefabInstance:
     - target: {fileID: 1474897946682083767, guid: b9d574804f1c278479f5f041b2eaf06a, type: 3}
       propertyPath: m_Name
       value: EnemySentryRed_L
+      objectReference: {fileID: 0}
+    - target: {fileID: 3023280586224138994, guid: b9d574804f1c278479f5f041b2eaf06a, type: 3}
+      propertyPath: seeAlways
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5393174203134061478, guid: b9d574804f1c278479f5f041b2eaf06a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -565,6 +593,14 @@ PrefabInstance:
       propertyPath: m_IsKinematic
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8248080693241708795, guid: b9d574804f1c278479f5f041b2eaf06a, type: 3}
+      propertyPath: MaxHealth
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 8248080693241708795, guid: b9d574804f1c278479f5f041b2eaf06a, type: 3}
+      propertyPath: Health
+      value: 100
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b9d574804f1c278479f5f041b2eaf06a, type: 3}
 --- !u!4 &1944615811567393043 stripped
@@ -600,7 +636,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8160879624361726137, guid: 7a4e575a06fdbcb4982264801d5aef9b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.043
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 8160879624361726137, guid: 7a4e575a06fdbcb4982264801d5aef9b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -656,6 +692,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemySentryRed_R
       objectReference: {fileID: 0}
+    - target: {fileID: 3023280586224138994, guid: b9d574804f1c278479f5f041b2eaf06a, type: 3}
+      propertyPath: seeAlways
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5393174203134061478, guid: b9d574804f1c278479f5f041b2eaf06a, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.416
@@ -703,6 +743,14 @@ PrefabInstance:
     - target: {fileID: 7955898110167407255, guid: b9d574804f1c278479f5f041b2eaf06a, type: 3}
       propertyPath: m_IsKinematic
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8248080693241708795, guid: b9d574804f1c278479f5f041b2eaf06a, type: 3}
+      propertyPath: MaxHealth
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 8248080693241708795, guid: b9d574804f1c278479f5f041b2eaf06a, type: 3}
+      propertyPath: Health
+      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b9d574804f1c278479f5f041b2eaf06a, type: 3}
