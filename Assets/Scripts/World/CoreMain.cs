@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using GameState;
 using UnityEngine;
 
 public class CoreMain : MonoBehaviour
@@ -6,6 +7,8 @@ public class CoreMain : MonoBehaviour
     public CoreUI coreUi;
     public ShopUi shopUi;
     public ShopDoors doors;
+
+    public GameStateBehaviour GameStateBeh;
 
     public int rerollShopOnLoop;
 
@@ -15,12 +18,16 @@ public class CoreMain : MonoBehaviour
     private int _loopReached;
     private bool bossSpawned;
 
+    private float _originalY;
+    
     void Start()
     {
         _loopReached = 0;
 
         ShowInfoUi();
         doors.LockEntrance();
+
+        _originalY = transform.position.y;
     }
 
     private void Update()
@@ -110,10 +117,18 @@ public class CoreMain : MonoBehaviour
         if (bossSpawned) return;
         bossSpawned = true;
         
-        Debug.Log("### BOSS!");
+        var boss = Instantiate(bossPrefab, transform.position, Quaternion.identity);
+        boss.GetComponent<Boss>().SetCore(this);
         
-        Instantiate(bossPrefab, transform.position, Quaternion.identity);
         StartCoroutine(MoveDown(gameObject, -2.24f)); // -3f if need to hide completely
+
+        GameStateBeh.Paused = true;
     }
 
+    public void OnBossDestroyed()
+    {
+        GameStateBeh.Paused = false;
+        StartCoroutine(MoveUp(gameObject, _originalY));
+    }
+    
 }
