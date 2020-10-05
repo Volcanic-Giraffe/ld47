@@ -211,7 +211,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Health: 30
-  AOECoefficient: 0.8
+  AOECoefficient: 0.5
   MaxHealth: 30
   soundsHit:
   - {fileID: 8300000, guid: 0fe5e6171aea45e4c8ced6649f3d3d19, type: 3}
