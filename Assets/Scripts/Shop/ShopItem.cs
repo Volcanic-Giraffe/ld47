@@ -11,27 +11,34 @@ public class ShopItem : MonoBehaviour
 
     public GameObject purchaseEffect;
     
+    protected GameObject hero;
+    protected Damageable heroHealth;
+    protected TurretPicker heroTurretPicker;
+    protected TankUpgrades heroUpgrades;
+
     private void Start()
     {
         OnBlur();
+        
+        hero = GameObject.FindGameObjectWithTag("Hero");
+        heroHealth = hero.GetComponent<Damageable>();
+        heroTurretPicker = hero.GetComponent<TurretPicker>();
+        heroUpgrades = hero.GetComponent<TankUpgrades>();
     }
 
     public bool TryPurchase()
     {
-        // todo: price check
-        var enoughMoney = true;
-
-        if (enoughMoney)
+        if (IsEnoughMoney())
         {
+            GameState.GameState.GetInstance().Resources -= price;
+            
             OnPurchased();
-        
+            
             if (purchaseEffect != null) Instantiate(purchaseEffect, transform.position, Quaternion.identity);
         
             Destroy(gameObject);
-        
             return true;
         }
-
         return false;
     }
 
@@ -42,14 +49,18 @@ public class ShopItem : MonoBehaviour
 
     public virtual void OnHover()
     {
-        var hoverEffect = hoverGood; // todo: or bad, if low money
-
-        if (hoverEffect != null) hoverEffect.gameObject.SetActive(true);
+        if (hoverBad != null) hoverBad.gameObject.SetActive(!IsEnoughMoney());
+        if (hoverGood != null) hoverGood.gameObject.SetActive(IsEnoughMoney());
     }
 
     public virtual void OnBlur()
     {
         if (hoverBad != null) hoverBad.gameObject.SetActive(false);
         if (hoverGood != null) hoverGood.gameObject.SetActive(false);
+    }
+    
+    private bool IsEnoughMoney()
+    {
+        return GameState.GameState.GetInstance().Resources >= price;
     }
 }

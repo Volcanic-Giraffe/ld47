@@ -65,6 +65,7 @@ MonoBehaviour:
   hoverGood: {fileID: 8574582708149930625}
   hoverBad: {fileID: 3925458614975244339}
   purchaseEffect: {fileID: 2381677092008072179, guid: bdbf608500b6f8c4e93c4a1c5f098a25, type: 3}
+  turret: 4
 --- !u!1001 &7149589286483563626
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -80,7 +80,8 @@ public class ShopUi : MonoBehaviour
             _hovered.OnBlur();
             _hovered = null;
         }
-        ShowDescription(_emptyDescription);
+        // ShowDescription(_emptyDescription);
+        ShowDescription("RES: " + GameState.GameState.GetInstance().Resources);
     }
 
     public void RandomizeLots()

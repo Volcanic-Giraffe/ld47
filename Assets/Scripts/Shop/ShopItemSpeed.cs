@@ -6,6 +6,6 @@ public class ShopItemSpeed : ShopItem
 {
     public override void OnPurchased()
     {
-        
+        heroUpgrades.firerateUpgrades += 1;
     }
 }

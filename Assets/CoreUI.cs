@@ -20,7 +20,10 @@ public class CoreUI : MonoBehaviour
             health = actualHealth;
             for (int i = 0; i < Health.transform.childCount; i++)
             {
-                Health.transform.GetChild(i).gameObject.SetActive(i < actualHealth);
+                if (i < Health.transform.childCount)
+                {
+                    Health.transform.GetChild(i).gameObject.SetActive(i < actualHealth);
+                }
             }
 
         }

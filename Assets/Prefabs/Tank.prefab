@@ -40,6 +40,7 @@ GameObject:
   - component: {fileID: 5455610667488535249}
   - component: {fileID: 3069091465851437537}
   - component: {fileID: 5454817987353568231}
+  - component: {fileID: 2290491522024051953}
   m_Layer: 10
   m_Name: Tank
   m_TagString: Hero
@@ -132,6 +133,23 @@ MonoBehaviour:
   - {fileID: 368135457057002257, guid: 61326321d3f8e9548acda1507fd9a13a, type: 3}
   - {fileID: 0}
   - {fileID: 368135457057002257, guid: 5d5425ad08c2e9f448087204acf62ea4, type: 3}
+--- !u!114 &2290491522024051953
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6147246771986685831}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18940042d6dd4f347adf573c87b2f307, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  firerateBuff: 0.9
+  powerBuff: 1
+  firerateUpgrades: 0
+  powerUpgrades: 0
+  specialUpgrades: 0
 --- !u!1 &7915555035004629798
 GameObject:
   m_ObjectHideFlags: 0

@@ -17,6 +17,11 @@ public class Damageable : MonoBehaviour
             Health = MaxHealth;
     }
 
+    public void RestoreFullHealth()
+    {
+        Health = MaxHealth;
+    }
+
     public void Damage(GameObject who, float amount)
     {
         OnHit?.Invoke();

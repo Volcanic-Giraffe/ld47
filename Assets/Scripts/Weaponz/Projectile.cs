@@ -11,7 +11,8 @@ public class Projectile : MonoBehaviour
     public string hitOnlyTag;
 
     private bool hitOnce;
-    
+    private TankUpgrades _upgrades;
+
     void OnCollisionEnter(Collision collision)
     {
         DoDamage(collision.gameObject);
@@ -26,9 +27,14 @@ public class Projectile : MonoBehaviour
         if (damageable != null && validTag && !hitOnce)
         {
             hitOnce = true;
-            damageable.Damage(this.gameObject, Damage);
+            damageable.Damage(this.gameObject, DamageWithUpgrades());
         }
-        if (Explosion != null && validTag) Instantiate(Explosion, this.transform.position, Quaternion.identity);
+
+        if (Explosion != null && validTag)
+        {
+            var explode = Instantiate(Explosion, this.transform.position, Quaternion.identity);
+            explode.GetComponent<DamageOnEnter>()?.SetUpgrades(_upgrades);
+        }
         
         DestroyProjectile();
     }
@@ -36,5 +42,16 @@ public class Projectile : MonoBehaviour
     protected virtual void DestroyProjectile()
     {
         Destroy(gameObject);
+    }
+
+    private float DamageWithUpgrades()
+    {
+        if (_upgrades == null) return Damage;
+        return _upgrades.DamageFormula(Damage);
+    }
+    
+    public void SetUpgrades(TankUpgrades upgrades)
+    {
+        _upgrades = upgrades;
     }
 }

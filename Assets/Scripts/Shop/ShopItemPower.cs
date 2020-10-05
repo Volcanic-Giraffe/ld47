@@ -6,6 +6,6 @@ public class ShopItemPower : ShopItem
 {
     public override void OnPurchased()
     {
-        
+        heroUpgrades.powerUpgrades += 1;
     }
 }

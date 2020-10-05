@@ -6,6 +6,6 @@ public class ShopItemSpecial : ShopItem
 {
     public override void OnPurchased()
     {
-        
+        heroUpgrades.specialUpgrades += 1;
     }
 }

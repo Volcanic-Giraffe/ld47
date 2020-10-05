@@ -13,6 +13,8 @@ public class Cannon : MonoBehaviour
 
     float fireTimer = 0;
     int cpIndex = 0;
+    
+    private TankUpgrades _upgrades;
 
     public Transform NextCannonPoint
     {
@@ -27,7 +29,7 @@ public class Cannon : MonoBehaviour
 
     void Start()
     {
-        fireTimer = Firerate;
+        fireTimer = FirerateWithUpgrades();
     }
 
     // Update is called once per frame
@@ -43,11 +45,12 @@ public class Cannon : MonoBehaviour
     {
         if (fireTimer <= 0)
         {
-            fireTimer = Firerate;
+            fireTimer = FirerateWithUpgrades();
             var proj = Instantiate(Projectile);
             var cp = NextCannonPoint;
             proj.transform.position = cp.position;
             proj.transform.rotation = transform.rotation;
+            proj.GetComponent<Projectile>()?.SetUpgrades(_upgrades);
             proj.GetComponent<Rigidbody>().AddForce(transform.forward * ShotSpeed, ForceMode.VelocityChange);
 
             var flash = Instantiate(Flash, this.transform);
@@ -55,5 +58,16 @@ public class Cannon : MonoBehaviour
             flash.transform.position = cp.position;
         }
 
+    }
+
+    private float FirerateWithUpgrades()
+    {
+        if (_upgrades == null) return Firerate;
+        return _upgrades.FirerateFormula(Firerate);
+    }
+
+    public void SetUpgrades(TankUpgrades upgrades)
+    {
+        _upgrades = upgrades;
     }
 }
