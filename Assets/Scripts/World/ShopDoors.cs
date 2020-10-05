@@ -54,4 +54,14 @@ public class ShopDoors : MonoBehaviour
         var posR = doorR.transform.position;
         doorR.transform.position = new Vector3(posR.x, _closedY, posR.z);
     }
+
+    public void LockEntrance()
+    {
+        
+    }
+
+    public void UnlockEntrance()
+    {
+        
+    }
 }

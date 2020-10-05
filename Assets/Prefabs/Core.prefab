@@ -76,9 +76,9 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 3664434481109884056}
   - {fileID: 7250620705631445746}
   - {fileID: 8495095981458146625}
+  - {fileID: 3664434481109884056}
   - {fileID: 2039667838537989166}
   - {fileID: 9158215472464810111}
   m_Father: {fileID: 0}
@@ -154,6 +154,7 @@ MonoBehaviour:
   coreUi: {fileID: 6251694402622884606}
   shopUi: {fileID: 4179941427852054434}
   doors: {fileID: 6308389199291166653}
+  rerollShopOnLoop: 3
 --- !u!1001 &3841595511664687987
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -191,7 +192,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6042db5dd3457c847b992acea3db41f4, type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6042db5dd3457c847b992acea3db41f4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -261,7 +262,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1561638236183995410, guid: 78b39f97df8f20248a5417b1a6482219, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1561638236183995410, guid: 78b39f97df8f20248a5417b1a6482219, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -330,7 +331,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 65605252265654585, guid: 8708e541ccf0ddb4895a86a44df10208, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 65605252265654585, guid: 8708e541ccf0ddb4895a86a44df10208, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
