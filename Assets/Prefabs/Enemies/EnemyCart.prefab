@@ -126,9 +126,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 7b66e4f072442be4ba009f4ab72df39e, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.273
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -273,6 +273,7 @@ MonoBehaviour:
   cannonPoint: {fileID: 2006599669843887272}
   chargeTime: 1
   Charging: 0
+  _audio: {fileID: 0}
 --- !u!114 &282821226844424969
 MonoBehaviour:
   m_ObjectHideFlags: 0

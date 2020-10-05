@@ -19,8 +19,18 @@ public class ShopItem : MonoBehaviour
     private void Start()
     {
         OnBlur();
-        
-        hero = GameObject.FindGameObjectWithTag("Hero");
+
+        // might be easier but I'm lazy
+        // do not remove hero tag from hero body bcs resource check it on collide!
+        var hs = GameObject.FindGameObjectsWithTag("Hero");
+        foreach (var he in hs)
+        {
+            if (he.GetComponent<Damageable>() != null)
+            {
+                hero = he;
+                break;
+            }
+        }
         heroHealth = hero.GetComponent<Damageable>();
         heroTurretPicker = hero.GetComponent<TurretPicker>();
         heroUpgrades = hero.GetComponent<TankUpgrades>();

@@ -13,15 +13,17 @@ public class LaserGun : MonoBehaviour
     private float _chargeTimer;
     public bool Charging;
     private GameObject aimBeam;
-
+    public AudioSource _audio;
     void Start()
     {
+        _audio = GetComponent<AudioSource>();
     }
 
     void FireLaser()
     {
         if (aimBeam != null) Destroy(aimBeam);
         if (Charging == false) return;
+        if (_audio != null) _audio.Play();
         Instantiate(projectilePrefab, cannonPoint.position, cannonPoint.rotation);
     }
     
