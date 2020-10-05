@@ -123,6 +123,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Health: 30
+  AOECoefficient: 0.8
   MaxHealth: 30
 --- !u!114 &1933949399069124763
 MonoBehaviour:

@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 2606336146457799588}
   - component: {fileID: 3028171723274089371}
   - component: {fileID: 6835358856676031596}
+  - component: {fileID: 7955898110167407255}
   m_Layer: 14
   m_Name: EnemySentryRed
   m_TagString: Enemy
@@ -52,6 +53,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Health: 20
+  AOECoefficient: 0.3
   MaxHealth: 20
 --- !u!65 &1004497044381330202
 BoxCollider:
@@ -133,6 +135,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   resourcePrefab: {fileID: 1649713919260475044, guid: 0565813916b2ee34f97c809795128e73, type: 3}
   drops: 2
+--- !u!54 &7955898110167407255
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1474897946682083767}
+  serializedVersion: 2
+  m_Mass: 100
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1001 &8657406814071977580
 PrefabInstance:
   m_ObjectHideFlags: 0
