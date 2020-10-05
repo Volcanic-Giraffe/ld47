@@ -36,6 +36,9 @@ public class ExitZone : MonoBehaviour
         }
         if (tank == null) yield break;
         var rb = tank.GetComponent<Rigidbody>();
+        var core = GameObject.FindGameObjectWithTag("CoreMain");
+        core.GetComponent<CoreMain>().ShowWin();
+
         while (true)
         {
             rb.AddForce(Vector3.up * 10 * Time.deltaTime, ForceMode.VelocityChange);
