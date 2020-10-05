@@ -14,6 +14,15 @@ public class Damageable : MonoBehaviour
 
     public event Action OnHit;
 
+    public AudioClip[] soundsHit;
+
+    private AudioSource _audio;
+
+    private void Awake()
+    {
+        _audio = GetComponent<AudioSource>();
+    }
+
     public void Heal(float amount)
     {
         Health += amount;
@@ -30,6 +39,12 @@ public class Damageable : MonoBehaviour
     {
         OnHit?.Invoke();
 
+        if (_audio != null && soundsHit != null && soundsHit.Length > 0)
+        {
+            _audio.clip = soundsHit[UnityEngine.Random.Range(0, soundsHit.Length)];
+            _audio.Play();
+        }
+        
         Debug.Log($"Damaging {gameObject.name} with {who.name} by {(aoe ? amount * AOECoefficient : amount)}.");
         Health -= aoe ? amount * AOECoefficient : amount;
         if (Health <= 0)
