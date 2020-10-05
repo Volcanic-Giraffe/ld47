@@ -5,6 +5,9 @@ using UnityEngine;
 public class Boss : MonoBehaviour
 {
     public Damageable[] parts;
+    private CoreMain _core;
+
+    private bool _diedOnce;
     
     // Start is called before the first frame update
     void Start()
@@ -12,6 +15,11 @@ public class Boss : MonoBehaviour
         
     }
 
+    public void SetCore(CoreMain core)
+    {
+        _core = core;
+    } 
+    
     // Update is called once per frame
     void Update()
     {
@@ -24,7 +32,25 @@ public class Boss : MonoBehaviour
                 alive = true;
             }
         }
+
+        if (!alive)
+        {
+            DieBossDie();
+        }
+    }
+
+    void DieBossDie()
+    {
+        if (_diedOnce) return;
+        _diedOnce = true;
         
-        if(!alive) Destroy(gameObject);
+        // todo: add explosions
+        // todo: delay destroy and core popup
+        // todo: drop key
+        
+        _core.OnBossDestroyed();
+        
+        Destroy(gameObject);
+        
     }
 }

@@ -10,6 +10,8 @@ public class Damageable : MonoBehaviour
 
     public float MaxHealth = 20;
 
+    public bool Invincible = false;
+
     public event Action OnDie;
 
     public event Action OnHit;
@@ -43,7 +45,12 @@ public class Damageable : MonoBehaviour
         {
             AudioSource.PlayClipAtPoint(soundsHit[UnityEngine.Random.Range(0, soundsHit.Length)], Camera.main.transform.position, 0.5f);
         }
-        
+
+        if (Invincible)
+        {
+            Debug.Log($" {gameObject.name} INVINCIBLE");
+            return;
+        }
         Debug.Log($"Damaging {gameObject.name} with {who.name} by {(aoe ? amount * AOECoefficient : amount)}.");
         Health -= aoe ? amount * AOECoefficient : amount;
         if (Health <= 0)
