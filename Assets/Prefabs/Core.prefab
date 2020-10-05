@@ -155,6 +155,8 @@ MonoBehaviour:
   shopUi: {fileID: 4179941427852054434}
   doors: {fileID: 6308389199291166653}
   rerollShopOnLoop: 3
+  bossPrefab: {fileID: 7255463814743422899, guid: 370a4f14963af354493f718ade213923, type: 3}
+  bossLoop: 2
 --- !u!1001 &3841595511664687987
 PrefabInstance:
   m_ObjectHideFlags: 0

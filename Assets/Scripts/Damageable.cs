@@ -52,4 +52,9 @@ public class Damageable : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+    public bool IsAlive()
+    {
+        return Health > 0;
+    }
 }
