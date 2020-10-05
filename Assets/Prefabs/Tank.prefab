@@ -84,6 +84,7 @@ MonoBehaviour:
   Ground:
     serializedVersion: 2
     m_Bits: 4096
+  EngineSound: {fileID: 8300000, guid: 1fc564f13797cda4fa25bc1d2b45bcb9, type: 3}
 --- !u!54 &5455610667488535249
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -112,9 +113,9 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
+  m_Volume: 0.168
+  m_Pitch: -0.71
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -186,7 +187,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 1
+      value: 1.1
       inSlope: 0
       outSlope: 0
       tangentMode: 0

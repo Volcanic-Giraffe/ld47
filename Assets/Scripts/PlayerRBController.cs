@@ -8,6 +8,8 @@ public class PlayerRBController : MonoBehaviour
 
     public float Speed = 5f;
     public LayerMask Ground;
+    public AudioClip EngineSound;
+    private AudioSource _asrc;
 
     private Rigidbody _body;
     private Vector3 _inputs = Vector3.zero;
@@ -24,6 +26,7 @@ public class PlayerRBController : MonoBehaviour
     void Start()
     {
         _body = GetComponent<Rigidbody>();
+        _asrc = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -32,7 +35,17 @@ public class PlayerRBController : MonoBehaviour
         _inputs.x = Input.GetAxis("Horizontal");
         _inputs.z = Input.GetAxis("Vertical");
         if (_inputs != Vector3.zero)
+        {
+            if (!_asrc.isPlaying && EngineSound != null)
+            {
+                _asrc.clip = EngineSound;
+                _asrc.Play();
+            }
             transform.forward = _inputs;
+        } else
+        {
+            _asrc.Stop();
+        }
     }
 
 

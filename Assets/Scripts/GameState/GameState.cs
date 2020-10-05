@@ -108,6 +108,7 @@ namespace GameState
 
                 } while (idx != idxTo);
             }
+            CurrentLoop = GetLoopByIdx(idxTo);
         }
 
         private static GameState _instance;
@@ -141,7 +142,6 @@ namespace GameState
             {
                 nextLoopState.EnterBackward(change.SectorIdx, prevLoopState);
             }
-            CurrentLoop = change.NewLoop;
         }
 
         // Вызывается когда объект уничтожен. Если его надо заменить трупом - параметр corpse. 
