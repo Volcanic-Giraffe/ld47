@@ -33,7 +33,6 @@ namespace GameState
         public int CurrentLoop = 1;
         public float HeroHealth = 0;
 
-
         public int GetLoopByIdx(int idx)
         {
             return sectorIdxToLoop[idx % SectorUtils.SectorsInCircle];

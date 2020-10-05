@@ -1,5 +1,4 @@
 ﻿using System;
-using Loop;
 using UnityEngine;
 
 
@@ -16,6 +15,11 @@ public class DropResourceOnDie : MonoBehaviour
 
     private void DropResource()
     {
-        for (int i = 0; i < drops; i++) Instantiate(resourcePrefab, transform.position, Quaternion.identity);
+        for (int i = 0; i < drops; i++)
+        {
+            var resource = Instantiate(resourcePrefab, transform.position, Quaternion.identity);
+            var rndVec = Vector3.up + new Vector3(UnityEngine.Random.Range(-0.2f, 0.2f), 0, UnityEngine.Random.Range(-0.2f, 0.2f));
+            resource.GetComponent<Rigidbody>().AddForce(rndVec * 6, ForceMode.VelocityChange);
+        }
     }
 }
