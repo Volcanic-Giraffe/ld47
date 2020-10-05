@@ -7,6 +7,9 @@ public class Boss : MonoBehaviour
     public Damageable[] parts;
     private CoreMain _core;
 
+    public GameObject keyPrefab;
+    public Transform keySpawn;
+    
     private bool _diedOnce;
     
     // Start is called before the first frame update
@@ -46,7 +49,8 @@ public class Boss : MonoBehaviour
         
         // todo: add explosions
         // todo: delay destroy and core popup
-        // todo: drop key
+
+        Instantiate(keyPrefab, keySpawn.position, keySpawn.rotation);
         
         _core.OnBossDestroyed();
         
