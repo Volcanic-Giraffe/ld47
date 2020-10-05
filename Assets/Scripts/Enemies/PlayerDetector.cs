@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class PlayerDetector : MonoBehaviour
 {
+    public bool seeAlways;
+    
     private GameObject _player;
 
     private const float range = 50f;
@@ -23,6 +25,8 @@ public class PlayerDetector : MonoBehaviour
     public bool CanSeePlayer(Vector3 hostPos, float rangeOverride = range)
     {
         if (_player == null) return false;
+
+        if (seeAlways) return true;
         
         Vector3 targetPos = _player.transform.position;
         Ray ray = new Ray(hostPos, (targetPos - hostPos).normalized * rangeOverride);

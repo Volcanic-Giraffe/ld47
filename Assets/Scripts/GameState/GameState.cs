@@ -37,6 +37,9 @@ namespace GameState
         private int _pausedAtLoop = -1;
         private Vector3 _pausedAtPosition;
 
+        public float PausedAtTime = -10;
+        public float UnpausedAtTime = -10;
+
         public void Pause(Vector3 position)
         {
             Debug.Log("PAUSE AT " + position + " idx = " + (SectorUtils.PositionToSectorIdx(position)));
@@ -44,6 +47,8 @@ namespace GameState
             {
                 _pausedAtPosition = position;
                 _pausedAtLoop = GetLoopByIdx(SectorUtils.PositionToSectorIdx(position));
+                PausedAtTime = Time.time;
+                UnpausedAtTime = -10;
             }
         }
 
@@ -54,6 +59,8 @@ namespace GameState
             {
                 _pausedAtLoop = -1;
                 OnHeroMove(_pausedAtPosition, position);
+                UnpausedAtTime = Time.time;
+                PausedAtTime = -10;
             }
         }
 

@@ -9,7 +9,11 @@ public class CoreMain : MonoBehaviour
 
     public int rerollShopOnLoop;
 
+    public GameObject bossPrefab;
+    public int bossLoop;
+
     private int _loopReached;
+    private bool bossSpawned;
 
     void Start()
     {
@@ -31,6 +35,11 @@ public class CoreMain : MonoBehaviour
             {
                 shopUi.RandomizeLots();
                 doors.UnlockEntrance();
+            }
+
+            if (_loopReached >= bossLoop)
+            {
+                SpawnBoss();
             }
         }
     }
@@ -94,6 +103,17 @@ public class CoreMain : MonoBehaviour
             obj.transform.position += Vector3.up * Time.deltaTime * 5;
             yield return new WaitForEndOfFrame();
         }
+    }
+
+    void SpawnBoss()
+    {
+        if (bossSpawned) return;
+        bossSpawned = true;
+        
+        Debug.Log("### BOSS!");
+        
+        Instantiate(bossPrefab, transform.position, Quaternion.identity);
+        StartCoroutine(MoveDown(gameObject, -2.24f)); // -3f if need to hide completely
     }
 
 }

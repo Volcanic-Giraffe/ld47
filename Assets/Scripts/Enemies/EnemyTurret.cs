@@ -40,7 +40,7 @@ public class EnemyTurret : MonoBehaviour
         
         if (angle < readyToAttackAngle && playerDetector.CanSeePlayer(transform.position))
         {
-            cannon.Fire();
+            if (cannon != null) cannon.Fire();
         }
         
         var eulerAngleVelocity = new Vector3 (0, angle, 0);
