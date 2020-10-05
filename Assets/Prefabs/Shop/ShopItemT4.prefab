@@ -60,7 +60,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92a335ce6343f7d478bd00ad4af257b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  price: 300
+  price: 450
   description: MLRS
   hoverGood: {fileID: 3927839439943810393}
   hoverBad: {fileID: 506911275525766491}

@@ -60,7 +60,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92a335ce6343f7d478bd00ad4af257b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  price: 500
+  price: 450
   description: Minigun
   hoverGood: {fileID: 8574582708149930625}
   hoverBad: {fileID: 3925458614975244339}
