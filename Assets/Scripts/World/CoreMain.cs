@@ -9,10 +9,32 @@ public class CoreMain : MonoBehaviour
     public ShopUi shopUi;
     public ShopDoors doors;
 
+    public int rerollShopOnLoop;
     
+    private int _loopReached;
+
     void Start()
     {
+        _loopReached = 0;
+        
         ShowInfoUi();
+        doors.LockEntrance();
+    }
+
+    private void Update()
+    {
+        var currentLoop = GameState.GameState.GetInstance().CurrentLoop;
+
+        if (currentLoop > _loopReached)
+        {
+            _loopReached = currentLoop;
+
+            if (_loopReached > 0 && _loopReached % rerollShopOnLoop == 0)
+            {
+                shopUi.RandomizeLots();
+                doors.UnlockEntrance();
+            }
+        }
     }
 
     private void OnTriggerEnter(Collider other)
