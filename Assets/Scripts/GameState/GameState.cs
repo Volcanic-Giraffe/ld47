@@ -180,6 +180,10 @@ namespace GameState
 
             return false;
         }
-        
+
+        public void ResetGameState()
+        {
+            _instance = null;
+        }
     }
 }
