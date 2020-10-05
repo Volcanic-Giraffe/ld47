@@ -16,7 +16,7 @@ public class SimpleFollower : MonoBehaviour
     private Rigidbody _rig;
 
     private Animator _anim;
-    
+    private AudioSource _aud;
     public PlayerDetector playerDetector;
     
     public float moveSpeed;
@@ -40,7 +40,7 @@ public class SimpleFollower : MonoBehaviour
     {
         _rig = GetComponent<Rigidbody>();
         _anim = GetComponent<Animator>();
-        
+        _aud = GetComponent<AudioSource>();
         _startPosition = transform.position;
 
         _state = BotState.Idle;
@@ -57,6 +57,7 @@ public class SimpleFollower : MonoBehaviour
     {
         if (_state == BotState.Idle || _state == BotState.WaitForRetreat)
         {
+            _aud.Stop();
             if (PlayerIsAngeringMe())
             {
                 _state = BotState.Agro;
@@ -75,6 +76,7 @@ public class SimpleFollower : MonoBehaviour
             LookAtPosition(_startPosition);
             var dist = MoveAtPosition(_startPosition);
             if (dist < 0.5) _state = BotState.Idle;
+            if (!_aud.isPlaying) _aud.Play();
         }
 
         if (_state == BotState.Agro)
@@ -82,7 +84,8 @@ public class SimpleFollower : MonoBehaviour
             if (PlayerIsAngeringMe())
             {
                 LookAtPlayer();
-                MoveAtPlayer();                
+                MoveAtPlayer();
+                if (!_aud.isPlaying) _aud.Play();
             }
             else
             {
@@ -127,6 +130,7 @@ public class SimpleFollower : MonoBehaviour
 
     private float MoveAtPosition(Vector3 target)
     {
+       
         var targetDir = target - transform.position;
         
         var distance = Vector3.Distance(transform.position, target);

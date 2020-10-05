@@ -32,8 +32,9 @@ namespace GameState
 
         private void OnDrawGizmos()
         {
+#if UNITY_EDITOR
             if (_state == null || _hero == null) return;
-            
+
             Handles.Label(_hero.transform.position, "" + SectorUtils.PositionToSectorIdx(_hero.transform.position));
             
             var colors = new Color[]
@@ -57,6 +58,7 @@ namespace GameState
 
                 Handles.Label(point, "Idx " + SectorUtils.PositionToSectorIdx(point) + " Loop " + loop);// + " ang = " + Mathf.Rad2Deg *Mathf.Atan2(-point.y, point.x) + "/" + i);
             }
+#endif
         }
     }
 }

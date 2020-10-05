@@ -123,7 +123,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -223,8 +223,11 @@ MonoBehaviour:
   AOECoefficient: 0.8
   MaxHealth: 30
   soundsHit:
-  - {fileID: 8300000, guid: e213514b3d724f34b80087323f8f4699, type: 3}
-  - {fileID: 8300000, guid: 7b65eff82e9e41b499a003d5961e2eed, type: 3}
+  - {fileID: 8300000, guid: 38f99623ffc55e0458c3d221ac728572, type: 3}
+  - {fileID: 8300000, guid: 61b465b5c34db314d9898bae32e172f4, type: 3}
+  - {fileID: 8300000, guid: fb81fc7e10e48854ebaf66a135ee1e94, type: 3}
+  - {fileID: 8300000, guid: 4b3a81d0c248eb04b95d0253cda852a1, type: 3}
+  - {fileID: 8300000, guid: c734bd40c399b4e479bfcbdd78c77396, type: 3}
 --- !u!114 &1933949399069124763
 MonoBehaviour:
   m_ObjectHideFlags: 0
