@@ -1,11 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using GameState;
+using Shadow;
 using UnityEngine;
 
 public class ExitZone : MonoBehaviour
 {
     private Animator _anim;
 
+    public GameStateBehaviour gameStateBeh;
+    public Shadower shadower;
+
+    private bool _triggeredOnce;
+    
     private static readonly int IsLifting = Animator.StringToHash("IsLifting");
     private void Start()
     {
@@ -15,9 +22,14 @@ public class ExitZone : MonoBehaviour
     {
         if (collider.tag == "Hero")
         {
+            if (_triggeredOnce) return;
+            _triggeredOnce = true;
+            
             StartCoroutine(LiftTank());
             _anim.SetBool(IsLifting, true);
 
+            if (shadower != null) shadower.DecreaseBeam = false;
+            if (gameStateBeh != null) gameStateBeh.Paused = true;
         }
     }
 
