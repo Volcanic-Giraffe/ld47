@@ -196,7 +196,7 @@ MonoBehaviour:
   - {fileID: 4158590801934951089}
   Projectile: {fileID: 1399181211887296626, guid: 41960a11c18eda84987018b0bca8967a, type: 3}
   Flash: {fileID: 1316390964462558284, guid: 84af8ebd8754c6f41822b8d5d5df33cc, type: 3}
-  ShotSpeed: 6
+  ShotSpeed: 5
   Firerate: 1
   _audio: {fileID: 6168151079851103086}
 --- !u!114 &5923230520009625250
