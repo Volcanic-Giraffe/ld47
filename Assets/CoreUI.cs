@@ -4,9 +4,11 @@ using UnityEngine;
 public class CoreUI : MonoBehaviour
 {
     public GameObject Health;
+    public GameObject Shots;
     public TextMesh LoopsText;
     public TextMesh ResText;
     int health = 0;
+    int shots = -1;
 
     private float _logoVisibilityTime = 2.0f;
 
@@ -14,6 +16,7 @@ public class CoreUI : MonoBehaviour
 
     private SpriteRenderer _logo;
     private bool _anyKeyDown = false;
+    private SuperCannon superCannon;
 
     private void Awake()
     {
@@ -27,7 +30,16 @@ public class CoreUI : MonoBehaviour
 
     void Start()
     {
-        
+        var hs = GameObject.FindGameObjectsWithTag("Hero");
+        foreach (var he in hs)
+        {
+            var sc = he.GetComponent<SuperCannon>();
+            if (sc != null)
+            {
+                superCannon = sc;
+                break;
+            }
+        }
     }
 
     // Update is called once per frame
@@ -59,7 +71,18 @@ public class CoreUI : MonoBehaviour
                     Health.transform.GetChild(i).gameObject.SetActive(i < actualHealth);
                 }
             }
+        }
 
+        if(shots != superCannon.Charges)
+        {
+            shots = superCannon.Charges;
+            for (int i = 0; i < Shots.transform.childCount; i++)
+            {
+                if (i < Shots.transform.childCount)
+                {
+                    Shots.transform.GetChild(i).gameObject.SetActive(i < superCannon.Charges);
+                }
+            }
         }
 
         if (LoopsText.gameObject.activeSelf) LoopsText.text = GameState.GameState.GetInstance().CurrentLoop.ToString();
