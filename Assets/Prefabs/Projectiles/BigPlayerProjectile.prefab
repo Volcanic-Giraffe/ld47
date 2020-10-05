@@ -157,3 +157,4 @@ MonoBehaviour:
   Damage: 8
   Explosion: {fileID: 7126102090859329453, guid: adf48440712f0b546b2e534a85e0e261, type: 3}
   hitOnlyTag: 
+  impactSound: {fileID: 8300000, guid: 55dab14fd20270e4688605867583dbd6, type: 3}
