@@ -159,6 +159,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Amount: 5
+  pickupSound: {fileID: 8300000, guid: 785b70a5f1633b448af5730c7180b22e, type: 3}
 --- !u!1 &4275963802348617858
 GameObject:
   m_ObjectHideFlags: 0
