@@ -154,6 +154,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3755892347dc9f4b9ca22fbe5cb87eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Damage: 1
+  Damage: 1.3
   Explosion: {fileID: 7126102090859329453, guid: e420179e56eae84478f3e4cda1112443, type: 3}
   hitOnlyTag: 
