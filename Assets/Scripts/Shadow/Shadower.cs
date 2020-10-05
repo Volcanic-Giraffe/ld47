@@ -7,10 +7,14 @@ namespace Shadow
     {
         private GameObject _hero;
         public Material ShadowerMaterial;
+        private GameState.GameState _state;
+
+        public bool DecreaseBeam = true;
 
         private void Awake()
         {
             _hero = GameObject.FindWithTag("Hero");
+            _state = GameState.GameState.GetInstance();
         }
 
         private void Update()
@@ -26,6 +30,25 @@ namespace Shadow
 
                 ShadowerMaterial.SetVector("HeroUV", new Vector4(u, v));
             }
+
+            var BeamVisibility = 1.0f;
+            const float BEAM_FADE = 2.0f;
+            if ((Time.time - _state.PausedAtTime) < BEAM_FADE)
+            {
+                BeamVisibility = Mathf.Lerp(1, 0, (Time.time - _state.PausedAtTime) / BEAM_FADE);
+                Debug.Log("PS " + BeamVisibility);
+            }
+            else if ((Time.time - _state.UnpausedAtTime) < BEAM_FADE)
+            {
+                BeamVisibility = Mathf.Lerp(0, 1, (Time.time - _state.UnpausedAtTime) / BEAM_FADE);
+                Debug.Log("UPS " + BeamVisibility);
+            }
+            else if (_state.PausedAtTime > 0)
+            {
+                BeamVisibility = 0;
+            }
+            ShadowerMaterial.SetFloat("BeamVisibility", BeamVisibility);
+            ShadowerMaterial.SetFloat("BeamVisibilityDecrease", DecreaseBeam ? 1.0f : 0.0f);
         }
     }
 }
