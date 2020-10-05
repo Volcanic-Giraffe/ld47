@@ -15,7 +15,7 @@ public class DamageOnEnter : MonoBehaviour
         if (damageable != null && !alreadyDamaged.Contains(damageable.gameObject))
         {
             alreadyDamaged.Add(damageable.gameObject);
-            damageable.Damage(gameObject, DamageWithUpgrades());
+            damageable.Damage(gameObject, DamageWithUpgrades(), true);
         }
     }
 

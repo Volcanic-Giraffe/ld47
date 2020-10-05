@@ -30,7 +30,7 @@ public class Damageable : MonoBehaviour
     {
         OnHit?.Invoke();
 
-        Debug.Log($"Damaging {gameObject.name} with {who.name} by {amount}.");
+        Debug.Log($"Damaging {gameObject.name} with {who.name} by {(aoe ? amount * AOECoefficient : amount)}.");
         Health -= aoe ? amount * AOECoefficient : amount;
         if (Health <= 0)
         {
