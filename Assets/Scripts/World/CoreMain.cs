@@ -6,6 +6,7 @@ public class CoreMain : MonoBehaviour
 {
     public CoreUI coreUi;
     public ShopUi shopUi;
+    public GameObject WinUi;
     public ShopDoors doors;
 
     public GameStateBehaviour GameStateBeh;
@@ -92,6 +93,21 @@ public class CoreMain : MonoBehaviour
         coreUi.gameObject.SetActive(true);
         shopUi.gameObject.SetActive(false);
         yield return MoveUp(coreUi.gameObject, 2f);
+    }
+
+    public void ShowWin()
+    {
+        StopAllCoroutines();
+        StartCoroutine(ShowWinCr());
+    }
+    private IEnumerator ShowWinCr()
+    {
+        yield return new WaitForSeconds(3);
+        yield return MoveDown(shopUi.gameObject, 1f);
+        yield return MoveDown(coreUi.gameObject, 1f);
+        coreUi.gameObject.SetActive(false);
+        shopUi.gameObject.SetActive(false);
+        yield return MoveUp(WinUi, 2f);
     }
 
     private IEnumerator MoveDown(GameObject obj, float desiredY)
