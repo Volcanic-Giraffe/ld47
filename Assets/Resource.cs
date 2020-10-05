@@ -17,7 +17,7 @@ public class Resource : MonoBehaviour
     {
         if (_player != null && Vector3.Distance(_player.transform.position, transform.position) < 4)
         {
-            _rb.AddForce((_player.transform.position - transform.position) * 0.1f, ForceMode.VelocityChange);
+            _rb.AddForce((_player.transform.position - transform.position).normalized * 0.5f, ForceMode.VelocityChange);
         }
     }
     private void OnCollisionEnter(Collision collision)
