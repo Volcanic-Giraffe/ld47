@@ -6,6 +6,9 @@ using UnityEngine;
 public class RestartOnDie : MonoBehaviour
 {
     public GameRestarter restarter;
+
+    public GameObject explosionPrefab;
+    
     private void Awake()
     {
         GetComponent<Damageable>().OnDie += RestartGame;
@@ -13,6 +16,8 @@ public class RestartOnDie : MonoBehaviour
 
     private void RestartGame()
     {
+        if (explosionPrefab) Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+        
         if (restarter != null) restarter.RestartWholeGame();
     }
 }

@@ -31,8 +31,15 @@ public class GameRestarter : MonoBehaviour
     {
         if (_calledOnce) return;
         _calledOnce = true;
+
+        StartCoroutine(DelayFadeAndRestart());
+    }
+
+    public IEnumerator DelayFadeAndRestart()
+    {
+        yield return new WaitForSeconds(1.5f);
         
-        if(overlay != null) overlay.FadeOut();
+        if (overlay != null) overlay.FadeOut();
         _timeToRestart = 1f;
     }
 }

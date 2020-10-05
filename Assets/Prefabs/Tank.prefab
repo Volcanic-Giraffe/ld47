@@ -213,6 +213,7 @@ MonoBehaviour:
   Health: 30
   AOECoefficient: 0.5
   MaxHealth: 30
+  Invincible: 0
   soundsHit:
   - {fileID: 8300000, guid: 0fe5e6171aea45e4c8ced6649f3d3d19, type: 3}
   - {fileID: 8300000, guid: aab611e888c70dc4d8bc0eb40f1452c1, type: 3}
@@ -269,6 +270,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   restarter: {fileID: 0}
+  explosionPrefab: {fileID: 7126102090859329453, guid: adf48440712f0b546b2e534a85e0e261, type: 3}
 --- !u!1 &7915555035004629798
 GameObject:
   m_ObjectHideFlags: 0
