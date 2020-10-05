@@ -5,7 +5,8 @@ public class Turret : MonoBehaviour
     public float RotationSpeed = 0.5f;
 
     private Camera _camera;
-    
+    private bool _inputDisabled;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -15,6 +16,8 @@ public class Turret : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (_inputDisabled) return;
+        
         RaycastHit hit;
         Ray ray = _camera.ScreenPointToRay(Input.mousePosition);
 
@@ -30,5 +33,10 @@ public class Turret : MonoBehaviour
         {
             SendMessage("Fire");
         }
+    }
+
+    public void DisableInput()
+    {
+        _inputDisabled = true;
     }
 }

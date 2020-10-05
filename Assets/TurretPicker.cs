@@ -30,4 +30,9 @@ public class TurretPicker : MonoBehaviour
         CurrentTurret.GetComponent<Cannon>()?.SetUpgrades(_upgrades);
         CurrentTurret.transform.SetParent(transform);
     }
+
+    public void DisableInput()
+    {
+        if (CurrentTurret != null) CurrentTurret.GetComponent<Turret>()?.DisableInput();
+    }
 }

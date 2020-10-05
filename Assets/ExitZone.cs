@@ -47,6 +47,14 @@ public class ExitZone : MonoBehaviour
             }
         }
         if (tank == null) yield break;
+
+        var moveInput = tank.GetComponent<PlayerRBController>();
+        if (moveInput != null) moveInput.DisableInput();
+        
+        
+        var towerInput = tank.GetComponent<TurretPicker>();
+        if (towerInput != null) towerInput.DisableInput();
+        
         var rb = tank.GetComponent<Rigidbody>();
         var core = GameObject.FindGameObjectWithTag("CoreMain");
         core.GetComponent<CoreMain>().ShowWin();
