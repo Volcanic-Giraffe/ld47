@@ -1,5 +1,35 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1707710922395100792
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5296598708614692306}
+  m_Layer: 10
+  m_Name: SupCannon
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5296598708614692306
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1707710922395100792}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.522, z: 0.219}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1691693703952786387}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!136 &4767892382428159096
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -43,6 +73,7 @@ GameObject:
   - component: {fileID: 5454817987353568231}
   - component: {fileID: 2290491522024051953}
   - component: {fileID: 2106847138896200580}
+  - component: {fileID: 8105556766401581003}
   m_Layer: 10
   m_Name: Tank
   m_TagString: Hero
@@ -65,6 +96,7 @@ Transform:
   - {fileID: 6405642901639452741}
   - {fileID: 7233158977465588530}
   - {fileID: 638998596585943395}
+  - {fileID: 5296598708614692306}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -271,6 +303,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   restarter: {fileID: 0}
   explosionPrefab: {fileID: 7126102090859329453, guid: adf48440712f0b546b2e534a85e0e261, type: 3}
+--- !u!114 &8105556766401581003
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6147246771986685831}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b51fa217c5c6c1f4aafce3b6d79e02c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Projectile: {fileID: 1847650053701656589, guid: f702e2c2d815b4c49a52f15b8f0d1268, type: 3}
+  Charges: 0
+  ChargeTime: 10
+  cannonPoint: {fileID: 5296598708614692306}
+  Sound: {fileID: 8300000, guid: 765572b1b4fe9cb45b3efe65ebed1703, type: 3}
 --- !u!1 &7915555035004629798
 GameObject:
   m_ObjectHideFlags: 0
