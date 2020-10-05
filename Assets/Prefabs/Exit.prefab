@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4173875654254963672}
   - component: {fileID: 1231288252528222129}
+  - component: {fileID: 4551463549988175282}
   m_Layer: 0
   m_Name: Exit
   m_TagString: Wall
@@ -43,8 +44,20 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1.5, z: 1}
+  m_Size: {x: 2.17, y: 2.79, z: 2.45}
   m_Center: {x: 0, y: 0.7, z: 0}
+--- !u!114 &4551463549988175282
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 665760121173418378}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d753aebef83326f4e89d5bc12500501a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &4153701224308211399
 PrefabInstance:
   m_ObjectHideFlags: 0
