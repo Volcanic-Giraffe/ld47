@@ -19,6 +19,8 @@ public class Musician : MonoBehaviour
 
     private GameObject _hero;
 
+    public int ForceMove = 0;
+
     private void Start()
     {
         _sources = transform.GetComponentsInChildren<AudioSource>();
@@ -61,6 +63,12 @@ public class Musician : MonoBehaviour
     {
         var length = _sources[_playingSource].clip.length;
         var remainig = length - _sources[_playingSource].time;
+
+        if (ForceMove != 0)
+        {
+            _nextSectorIdx += ForceMove*SectorUtils.SectorsInCircle;
+            ForceMove = 0;
+        }
 
         if (remainig > 0.5) return;
         if (_playingSource != 0)
@@ -110,7 +118,7 @@ public class Musician : MonoBehaviour
         yield return fadeOut;
         Debug.Log("DoFade - doen");
 
-        _lastSectorIdx = _lastSectorIdx + (int) (ChangeEveryLoop * SectorUtils.SectorsInCircle);
+        _lastSectorIdx = _lastSectorIdx + Math.Sign(nextId - _playingSource) * (int) (ChangeEveryLoop * SectorUtils.SectorsInCircle);
         _playingSource = nextId;
 
         _isChanging = false;
