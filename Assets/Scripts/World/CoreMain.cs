@@ -117,6 +117,8 @@ public class CoreMain : MonoBehaviour
             obj.transform.position += Vector3.down * Time.deltaTime * 5;
             yield return new WaitForEndOfFrame();
         }
+        var pos = obj.transform.position;
+        obj.transform.position = new Vector3(pos.x, desiredY, pos.z);
     }
 
     private IEnumerator MoveUp(GameObject obj, float desiredY)
@@ -126,6 +128,8 @@ public class CoreMain : MonoBehaviour
             obj.transform.position += Vector3.up * Time.deltaTime * 5;
             yield return new WaitForEndOfFrame();
         }
+        var pos = obj.transform.position;
+        obj.transform.position = new Vector3(pos.x, desiredY, pos.z);
     }
 
     void SpawnBoss()
@@ -136,7 +140,7 @@ public class CoreMain : MonoBehaviour
         var boss = Instantiate(bossPrefab, transform.position, Quaternion.identity);
         boss.GetComponent<Boss>().SetCore(this);
         
-        StartCoroutine(MoveDown(gameObject, -2.24f)); // -3f if need to hide completely
+        StartCoroutine(MoveDown(gameObject, -2f)); // -3f if need to hide completely
 
         GameStateBeh.Paused = true;
     }
