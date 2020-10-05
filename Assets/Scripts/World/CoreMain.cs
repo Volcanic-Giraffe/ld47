@@ -142,11 +142,15 @@ public class CoreMain : MonoBehaviour
         
         StartCoroutine(MoveDown(gameObject, -2f)); // -3f if need to hide completely
 
+        coreUi.HideTextLabels();
+        
         GameStateBeh.Paused = true;
     }
 
     public void OnBossDestroyed()
     {
+        coreUi.ShowTextLabels();
+        
         GameStateBeh.Paused = false;
         StartCoroutine(MoveUp(gameObject, _originalY));
     }

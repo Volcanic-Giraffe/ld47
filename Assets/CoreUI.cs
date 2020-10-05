@@ -62,7 +62,19 @@ public class CoreUI : MonoBehaviour
 
         }
 
-        LoopsText.text = GameState.GameState.GetInstance().CurrentLoop.ToString();
-        ResText.text = GameState.GameState.GetInstance().Resources.ToString();
+        if (LoopsText.gameObject.activeSelf) LoopsText.text = GameState.GameState.GetInstance().CurrentLoop.ToString();
+        if (ResText.gameObject.activeSelf) ResText.text = GameState.GameState.GetInstance().Resources.ToString();
+    }
+
+    public void HideTextLabels()
+    {
+        LoopsText.gameObject.SetActive(false);
+        ResText.gameObject.SetActive(false);
+    }
+
+    public void ShowTextLabels()
+    {
+        LoopsText.gameObject.SetActive(true);
+        ResText.gameObject.SetActive(true);
     }
 }
