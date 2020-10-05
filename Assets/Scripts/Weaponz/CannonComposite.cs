@@ -15,8 +15,6 @@ public class CannonComposite : Cannon
     {
         base.SetUpgrades(upgrades);
 
-        Debug.Log("### I AM HITTING OVERRIDE!");
-        
         foreach (var cannon in _cannons) cannon.SetUpgrades(upgrades);
     }
 
