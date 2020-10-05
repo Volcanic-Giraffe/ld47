@@ -63,6 +63,10 @@ public class Musician : MonoBehaviour
         var remainig = length - _sources[_playingSource].time;
 
         if (remainig > 0.5) return;
+        if (_playingSource != 0)
+        {
+            _sources[_playingSource].loop = true;
+        }
         if (!_introSwitched)
         {
             //just continue playing. exception is intro
@@ -81,6 +85,9 @@ public class Musician : MonoBehaviour
         {
             var nextId = (_loopsDiff > 0) ? _playingSource + 1 : _playingSource - 1;
             if (nextId < 1 || nextId >= _sources.Length) return;
+            _sources[nextId].PlayScheduled(AudioSettings.dspTime + remainig);
+            _sources[nextId].loop = true;
+
             StartCoroutine("DoFade", nextId);
         }
 
@@ -117,7 +124,9 @@ public class Musician : MonoBehaviour
     {
         audioSource.volume = 0;
 
-        audioSource.Play();
+        //must be played
+        audioSource.loop = true;
+        //audioSource.Play();
         while (audioSource.volume < 1)
         {
             audioSource.volume += Time.deltaTime / FadeTime;
