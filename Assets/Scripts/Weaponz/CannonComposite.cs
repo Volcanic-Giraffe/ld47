@@ -8,6 +8,7 @@ public class CannonComposite : Cannon
 
     public override void FireOnce()
     {
+        if (_audio != null) _audio.Play();
         foreach (var cannon in _cannons) cannon.FireOnce();
     }
     

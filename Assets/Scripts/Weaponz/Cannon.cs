@@ -11,6 +11,8 @@ public class Cannon : MonoBehaviour
     public float ShotSpeed;
     public float Firerate = 1f;
 
+    public AudioSource _audio;
+    
     float fireTimer = 0;
     int cpIndex = 0;
     
@@ -53,6 +55,8 @@ public class Cannon : MonoBehaviour
 
     public virtual void FireOnce()
     {
+        if (_audio != null) _audio.Play();
+        
         var proj = Instantiate(Projectile);
         var cp = NextCannonPoint;
         proj.transform.position = cp.position;
