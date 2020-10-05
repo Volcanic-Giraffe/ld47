@@ -11,6 +11,8 @@ namespace GameState
         private GameState _state;
         private Vector3 _prevHeroPosition;
 
+        public bool Paused;
+
         private void Awake()
         {
             // might be easier but I'm lazy
@@ -29,12 +31,30 @@ namespace GameState
             _prevHeroPosition = _hero.transform.position;
         }
 
+        private bool _oldPaused = false;
         private void Update()
         {
             if (_hero != null)
             {
                 var newPisition = _hero.transform.position;
-                _state.OnHeroMove(_prevHeroPosition, newPisition);
+                
+                if (Paused != _oldPaused)
+                {
+                    _oldPaused = Paused;
+                    if (Paused)
+                    {
+                        _state.Pause(newPisition);
+                    }
+                    else
+                    {
+                        _state.Unpause(newPisition);
+                    }
+                }
+                else
+                {
+                    _state.OnHeroMove(_prevHeroPosition, newPisition);
+                }
+
                 _prevHeroPosition = newPisition;
             }
             _state.HeroHealth = _heroHealth != null ? _heroHealth.Health : 0;
@@ -61,7 +81,7 @@ namespace GameState
                     Mathf.Sin(Mathf.Deg2Rad * i)
                 ) * 4f;
                 var loop = _state.GetLoopByIdx(SectorUtils.PositionToSectorIdx(point));
-                var color = colors[loop % colors.Length];
+                var color = colors[(loop + colors.Length) % colors.Length];
                 Handles.color = new Color(color.r, color.g, color.b, 0.1f);
                 Handles.DrawSolidArc(Vector3.zero, Vector3.up, point, sectorAngle, 4f);
                 Handles.color = new Color(0, 0, 0, 0.5f);

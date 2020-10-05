@@ -33,6 +33,30 @@ namespace GameState
         public int CurrentLoop = 1;
         public float HeroHealth = 0;
 
+
+        private int _pausedAtLoop = -1;
+        private Vector3 _pausedAtPosition;
+
+        public void Pause(Vector3 position)
+        {
+            Debug.Log("PAUSE AT " + position + " idx = " + (SectorUtils.PositionToSectorIdx(position)));
+            if (_pausedAtLoop == -1)
+            {
+                _pausedAtPosition = position;
+                _pausedAtLoop = GetLoopByIdx(SectorUtils.PositionToSectorIdx(position));
+            }
+        }
+
+        public void Unpause(Vector3 position)
+        {
+            Debug.Log("UNPAUSE AT " + position);
+            if (_pausedAtLoop != -1)
+            {
+                _pausedAtLoop = -1;
+                OnHeroMove(_pausedAtPosition, position);
+            }
+        }
+
         public int GetLoopByIdx(int idx)
         {
             return sectorIdxToLoop[idx % SectorUtils.SectorsInCircle];
@@ -61,6 +85,8 @@ namespace GameState
 
         public void OnHeroMove(Vector3 prevPosition, Vector3 nextPosition)
         {
+            if (_pausedAtLoop != -1) return;
+            
             var idxFrom = SectorUtils.PositionToSectorIdx(prevPosition);
             var idxTo = SectorUtils.PositionToSectorIdx(nextPosition);
 
@@ -95,19 +121,20 @@ namespace GameState
             }
             else
             {
+
                 var idx = idxFrom;
                 do
                 {
+                    var oppositeIdx = (idx + SectorUtils.SectorsInCircle / 2) % SectorUtils.SectorsInCircle;
+                    sectorIdxToLoop[oppositeIdx]--;
+                    Debug.Log($"  Change {oppositeIdx} loop to {sectorIdxToLoop[oppositeIdx]}");
+                    OnLoopChange?.Invoke(new SectorChangeLoop(oppositeIdx, sectorIdxToLoop[oppositeIdx],
+                        sectorIdxToLoop[oppositeIdx] + 1));
                     idx -= 1;
                     if (idx < 0)
                     {
                         idx += SectorUtils.SectorsInCircle;
                     }
-                    var oppositeIdx = (idxFrom + SectorUtils.SectorsInCircle / 2) % SectorUtils.SectorsInCircle;
-                    sectorIdxToLoop[oppositeIdx]--;
-                    Debug.Log($"  Change {oppositeIdx} loop to {sectorIdxToLoop[oppositeIdx]}");
-                    OnLoopChange?.Invoke(new SectorChangeLoop(oppositeIdx, sectorIdxToLoop[oppositeIdx],
-                        sectorIdxToLoop[oppositeIdx] + 1));
 
                 } while (idx != idxTo);
             }
