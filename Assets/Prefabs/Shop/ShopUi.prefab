@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 483167525299236376}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.53, y: 0, z: -0.63}
+  m_LocalPosition: {x: 0.53, y: 0.15, z: -0.63}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 65605252265654585}
@@ -54,7 +54,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1076948340107760490}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.52, y: 0, z: -0.62}
+  m_LocalPosition: {x: -0.52, y: 0.15, z: -0.62}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 65605252265654585}
@@ -179,7 +179,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2171303713454493327}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.54, y: 0, z: 0.26}
+  m_LocalPosition: {x: 0.54, y: 0.15, z: 0.26}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 65605252265654585}
@@ -266,7 +266,7 @@ TextMesh:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2473342942015374588}
-  m_Text: repairs
+  m_Text: Hover for info
   m_OffsetZ: 0
   m_CharacterSize: 1
   m_LineSpacing: 1
@@ -574,6 +574,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 65605252265654585}
+  - component: {fileID: 6806153077142262889}
+  - component: {fileID: 7871914263007678184}
   m_Layer: 0
   m_Name: ShopUi
   m_TagString: Untagged
@@ -605,6 +607,51 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6806153077142262889
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6689234793172024605}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f332f96195cc02e49a1dfac37fc4ee94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemPrefabs:
+  - {fileID: 2424174191788696298, guid: 2915c81423f365d41ae2935c62b4cdb7, type: 3}
+  - {fileID: 2232631676128801187, guid: 25921d1d35868964b9a6e92d63bc0c60, type: 3}
+  - {fileID: 7265335614460158323, guid: 91fb8482eba62b44dad9b812abc4e4da, type: 3}
+  - {fileID: 3601655899093734189, guid: d5564377784f1384e98b26f429c3c826, type: 3}
+  - {fileID: 3927099023357766458, guid: 834c087a15c90d34c821d512ef1b7bb3, type: 3}
+  - {fileID: 6959904587306942318, guid: b36ec620daf3ef048bad8af171d191f1, type: 3}
+  - {fileID: 1490952086368504702, guid: ec2236a8999c8c04eb6f567bcabe00af, type: 3}
+  - {fileID: 745913677616687926, guid: da04dd9dc79733742bed168bac9284f4, type: 3}
+  itemSlots:
+  - {fileID: 3389621278789397545}
+  - {fileID: 3504668211423798794}
+  - {fileID: 1914402252326402048}
+  - {fileID: 5043123877423465128}
+  itemTexts:
+  - {fileID: 272484975107283697}
+  - {fileID: 9193372325850970296}
+  - {fileID: 7270578490907359162}
+  - {fileID: 1332596918718074977}
+  description: {fileID: 2390360775202715018}
+--- !u!65 &7871914263007678184
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6689234793172024605}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.6, z: 1}
+  m_Center: {x: 0, y: 0.2, z: 0}
 --- !u!1 &9060819412015465692
 GameObject:
   m_ObjectHideFlags: 0
@@ -629,7 +676,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9060819412015465692}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.53, y: 0, z: 0.26}
+  m_LocalPosition: {x: -0.53, y: 0.15, z: 0.26}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 65605252265654585}

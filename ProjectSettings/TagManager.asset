@@ -8,6 +8,7 @@ TagManager:
   - Enemy
   - Wall
   - HeroProjectile
+  - ShopItem
   layers:
   - Default
   - TransparentFX
@@ -27,7 +28,7 @@ TagManager:
   - EnemyProjectile
   - Wall
   - Pickups
-  - 
+  - ShopItem
   - 
   - 
   - 

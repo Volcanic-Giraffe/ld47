@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &5737397905512883789
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1569355041493573355, guid: e6c3122751c16a049a4bc2f9595f1fbf, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1569355041493573355, guid: e6c3122751c16a049a4bc2f9595f1fbf, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1569355041493573355, guid: e6c3122751c16a049a4bc2f9595f1fbf, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1569355041493573355, guid: e6c3122751c16a049a4bc2f9595f1fbf, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6613520366379970429, guid: e6c3122751c16a049a4bc2f9595f1fbf, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: c266e16c30931da47a2b3feccc9e8da3, type: 2}
+    - target: {fileID: 6979908278836446280, guid: e6c3122751c16a049a4bc2f9595f1fbf, type: 3}
+      propertyPath: m_Name
+      value: HoverBad
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e6c3122751c16a049a4bc2f9595f1fbf, type: 3}
