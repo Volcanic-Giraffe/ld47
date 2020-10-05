@@ -9,6 +9,8 @@ public class Boss : MonoBehaviour
 
     public GameObject keyPrefab;
     public Transform keySpawn;
+
+    public GameObject dieExplosion;
     
     private bool _diedOnce;
     
@@ -50,11 +52,26 @@ public class Boss : MonoBehaviour
         // todo: add explosions
         // todo: delay destroy and core popup
 
+
+        StartCoroutine(DeathSequence());
+    }
+
+    IEnumerator DeathSequence()
+    {
+        for (int i = 0; i < 9; i++)
+        {
+            var pos = transform.position;
+            
+            Vector3 random = new Vector3(pos.x + Random.Range(-2f,2f), pos.y, pos.x + Random.Range(-1f, 1f));
+            
+            Instantiate(dieExplosion, random, Quaternion.identity);
+            
+            yield return new WaitForSeconds(0.3f);            
+        }
+
         Instantiate(keyPrefab, keySpawn.position, keySpawn.rotation);
-        
         _core.OnBossDestroyed();
         
         Destroy(gameObject);
-        
     }
 }

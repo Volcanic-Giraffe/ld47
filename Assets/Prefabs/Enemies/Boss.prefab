@@ -132,6 +132,7 @@ MonoBehaviour:
   - {fileID: 4022350089503266825}
   keyPrefab: {fileID: 1649713919260475044, guid: 1aa3cee20111be048b77e3e20965c550, type: 3}
   keySpawn: {fileID: 2531079435090334980}
+  dieExplosion: {fileID: 4168949433341634032, guid: f7c23b00faf8b9c4a9581fcafa1ee59f, type: 3}
 --- !u!1 &7574112979711251680
 GameObject:
   m_ObjectHideFlags: 0
@@ -454,11 +455,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8248080693241708795, guid: 75e7993144662f2459128db205ca096f, type: 3}
       propertyPath: MaxHealth
-      value: 200
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 8248080693241708795, guid: 75e7993144662f2459128db205ca096f, type: 3}
       propertyPath: Health
-      value: 200
+      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 75e7993144662f2459128db205ca096f, type: 3}
@@ -539,11 +540,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8248080693241708795, guid: 75e7993144662f2459128db205ca096f, type: 3}
       propertyPath: Health
-      value: 200
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 8248080693241708795, guid: 75e7993144662f2459128db205ca096f, type: 3}
       propertyPath: MaxHealth
-      value: 200
+      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 75e7993144662f2459128db205ca096f, type: 3}
