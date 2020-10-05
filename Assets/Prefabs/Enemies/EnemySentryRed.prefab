@@ -202,9 +202,25 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5393174203134061478}
     m_Modifications:
+    - target: {fileID: 813322860615193564, guid: 244f8e7c8d00404498b943ce9ec19d97, type: 3}
+      propertyPath: m_Layer
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 2402629863576043850, guid: 244f8e7c8d00404498b943ce9ec19d97, type: 3}
+      propertyPath: m_Layer
+      value: 14
+      objectReference: {fileID: 0}
     - target: {fileID: 6319460998097336830, guid: 244f8e7c8d00404498b943ce9ec19d97, type: 3}
       propertyPath: m_Name
       value: EnemyTurretRed
+      objectReference: {fileID: 0}
+    - target: {fileID: 6319460998097336830, guid: 244f8e7c8d00404498b943ce9ec19d97, type: 3}
+      propertyPath: m_Layer
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 6832007852588527792, guid: 244f8e7c8d00404498b943ce9ec19d97, type: 3}
+      propertyPath: m_Layer
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 6956371201075254094, guid: 244f8e7c8d00404498b943ce9ec19d97, type: 3}
       propertyPath: m_LocalPosition.x
@@ -249,6 +265,14 @@ PrefabInstance:
     - target: {fileID: 6956371201075254094, guid: 244f8e7c8d00404498b943ce9ec19d97, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8558047884716485381, guid: 244f8e7c8d00404498b943ce9ec19d97, type: 3}
+      propertyPath: m_Layer
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 9132015167442089059, guid: 244f8e7c8d00404498b943ce9ec19d97, type: 3}
+      propertyPath: m_Layer
+      value: 14
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 244f8e7c8d00404498b943ce9ec19d97, type: 3}
