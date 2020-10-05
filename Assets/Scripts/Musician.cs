@@ -12,14 +12,12 @@ public class Musician : MonoBehaviour
 
     public float ChangeEveryLoop = 1;
 
-    private int _startSector;
-    private int _startLoop;
+    private int _lastSectorIdx;
+    private int _nextSectorIdx;
+    
     private int _playingSource = 0;
 
     private GameObject _hero;
-
-    private int _lastChangeSector;
-    private int _lastChangeLoop;
 
     private void Start()
     {
@@ -27,55 +25,45 @@ public class Musician : MonoBehaviour
         _state = GameState.GameState.GetInstance();
         _state.OnLoopChange += StateOnOnLoopChange;
         _hero = GameObject.FindWithTag("Hero");
-        _lastChangeSector = _startSector = SectorUtils.PositionToSectorIdx(_hero.transform.position);
-        _lastChangeLoop = _startLoop = _state.GetLoopByIdx(_startSector);
+        _lastSectorIdx = _nextSectorIdx = 0;
+        var startSector = SectorUtils.PositionToSectorIdx(_hero.transform.position);
+        var startLoop = _state.GetLoopByIdx(startSector);
 
-        if (_startLoop <= 1)
+        if (startLoop <= 1)
         {
             _playingSource = 0; //intro
         }
         else
         {
-            _playingSource = _startLoop;
+            _playingSource = startLoop;
         }
 
         _sources[_playingSource].Play();
     }
 
-    private int _nextChangeSector = 0;
-    private int _nextChangeLoop = 0;
-
     private void StateOnOnLoopChange(SectorChangeLoop obj)
     {
-        _nextChangeSector = SectorUtils.PositionToSectorIdx(_hero.transform.position);
-        _nextChangeLoop = _state.GetLoopByIdx(_nextChangeSector);
-
+        if (obj.PrevLoop == null) return;
+        var clockwise = obj.NewLoop > obj.PrevLoop.Value;
+        if (clockwise)
+        {
+            _nextSectorIdx++;
+        }
+        else
+        {
+            _nextSectorIdx--;
+        }
     }
 
-    private bool _nextScheduled = false;
+    private bool _introSwitched = false;
 
     private void Update()
     {
         var length = _sources[_playingSource].clip.length;
         var remainig = length - _sources[_playingSource].time;
-        if (remainig > length/2)
-        {
-            _nextScheduled = false;
-        }
-        
-        if (remainig > 0.5) return;
 
-        if (_nextScheduled) return;
-        if (_isChanging) return;
-        _loopsDiff = (_nextChangeLoop + (float) _nextChangeSector / SectorUtils.SectorsInCircle) -
-                     (_lastChangeLoop + (float) _lastChangeSector / SectorUtils.SectorsInCircle);
-        if (Mathf.Abs(_loopsDiff) > ChangeEveryLoop)
-        {
-            var nextId = (_loopsDiff > 0) ? _playingSource + 1 : _playingSource - 1;
-            if (nextId < 1 || nextId >= _sources.Length) return;
-            StartCoroutine("DoFade", nextId);
-        }
-        else
+        if (remainig > 0.5) return;
+        if (!_introSwitched)
         {
             //just continue playing. exception is intro
             if (_playingSource == 0)
@@ -83,9 +71,19 @@ public class Musician : MonoBehaviour
                 _playingSource = 1;
                 _sources[_playingSource].PlayScheduled(AudioSettings.dspTime + remainig);
             }
+
+            _introSwitched = true;
         }
 
-        _nextScheduled = true;
+        if (_isChanging) return;
+        _loopsDiff = _nextSectorIdx - _lastSectorIdx;
+        if (Mathf.Abs(_loopsDiff) > ChangeEveryLoop*SectorUtils.SectorsInCircle)
+        {
+            var nextId = (_loopsDiff > 0) ? _playingSource + 1 : _playingSource - 1;
+            if (nextId < 1 || nextId >= _sources.Length) return;
+            StartCoroutine("DoFade", nextId);
+        }
+
     }
 
     private IEnumerator DoFade(int nextId)
@@ -105,10 +103,7 @@ public class Musician : MonoBehaviour
         yield return fadeOut;
         Debug.Log("DoFade - doen");
 
-        var loopNr = (_lastChangeLoop + (float) _lastChangeSector / SectorUtils.SectorsInCircle);
-        var nextLoopNr = loopNr + Math.Sign(nextId - _playingSource)*ChangeEveryLoop;
-        _lastChangeLoop = (int)nextLoopNr;
-        _lastChangeSector = (int)((nextLoopNr % 1) * SectorUtils.SectorsInCircle);
+        _lastSectorIdx = _lastSectorIdx + (int) (ChangeEveryLoop * SectorUtils.SectorsInCircle);
         _playingSource = nextId;
 
         _isChanging = false;
