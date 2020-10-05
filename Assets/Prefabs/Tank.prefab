@@ -112,7 +112,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Health: 15
-  AOECoefficient: 1
+  AOECoefficient: 0.8
   MaxHealth: 30
 --- !u!114 &5454817987353568231
 MonoBehaviour:
@@ -164,6 +164,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a58b5189b5a07084289bd35391c97818, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  restarter: {fileID: 0}
 --- !u!1 &7915555035004629798
 GameObject:
   m_ObjectHideFlags: 0
