@@ -60,11 +60,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92a335ce6343f7d478bd00ad4af257b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  price: 10
+  price: 50
   description: Stock Gun
   hoverGood: {fileID: 6198108505904727098}
   hoverBad: {fileID: 64691236563056313}
   purchaseEffect: {fileID: 2381677092008072179, guid: bdbf608500b6f8c4e93c4a1c5f098a25, type: 3}
+  turret: 0
 --- !u!1001 &4882855000783854289
 PrefabInstance:
   m_ObjectHideFlags: 0

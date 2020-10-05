@@ -46,18 +46,23 @@ public class Cannon : MonoBehaviour
         if (fireTimer <= 0)
         {
             fireTimer = FirerateWithUpgrades();
-            var proj = Instantiate(Projectile);
-            var cp = NextCannonPoint;
-            proj.transform.position = cp.position;
-            proj.transform.rotation = transform.rotation;
-            proj.GetComponent<Projectile>()?.SetUpgrades(_upgrades);
-            proj.GetComponent<Rigidbody>().AddForce(transform.forward * ShotSpeed, ForceMode.VelocityChange);
-
-            var flash = Instantiate(Flash, this.transform);
-            flash.transform.GetChild(0).transform.localScale = new Vector3(0.4f, 0.4f, 0.4f);
-            flash.transform.position = cp.position;
+            FireOnce();
         }
 
+    }
+
+    public virtual void FireOnce()
+    {
+        var proj = Instantiate(Projectile);
+        var cp = NextCannonPoint;
+        proj.transform.position = cp.position;
+        proj.transform.rotation = transform.rotation;
+        proj.GetComponent<Projectile>()?.SetUpgrades(_upgrades);
+        proj.GetComponent<Rigidbody>().AddForce(transform.forward * ShotSpeed, ForceMode.VelocityChange);
+
+        var flash = Instantiate(Flash, this.transform);
+        flash.transform.GetChild(0).transform.localScale = new Vector3(0.4f, 0.4f, 0.4f);
+        flash.transform.position = cp.position;
     }
 
     private float FirerateWithUpgrades()
@@ -66,7 +71,7 @@ public class Cannon : MonoBehaviour
         return _upgrades.FirerateFormula(Firerate);
     }
 
-    public void SetUpgrades(TankUpgrades upgrades)
+    public virtual void SetUpgrades(TankUpgrades upgrades)
     {
         _upgrades = upgrades;
     }

@@ -60,7 +60,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92a335ce6343f7d478bd00ad4af257b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  price: 30
+  price: 200
   description: Dual Gun
   hoverGood: {fileID: 1023064792963417262}
   hoverBad: {fileID: 6182975838471307320}
