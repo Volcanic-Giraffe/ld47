@@ -16,6 +16,8 @@ public class PlayerRBController : MonoBehaviour
 
     private Damageable _damageable;
 
+    private bool _inputDisabled;
+    
     private void Awake()
     {
         _damageable = GetComponent<Damageable>();
@@ -31,6 +33,11 @@ public class PlayerRBController : MonoBehaviour
 
     void Update()
     {
+        if (_inputDisabled)
+        {
+            _inputs = Vector3.zero;
+            return;
+        }
         _inputs = Vector3.zero;
         _inputs.x = Input.GetAxis("Horizontal");
         _inputs.z = Input.GetAxis("Vertical");
@@ -62,5 +69,10 @@ public class PlayerRBController : MonoBehaviour
     void OnTankDie()
     {
 
+    }
+
+    public void DisableInput()
+    {
+        _inputDisabled = true;
     }
 }
