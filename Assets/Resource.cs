@@ -7,6 +7,8 @@ public class Resource : MonoBehaviour
     private GameObject _player;
     private Rigidbody _rb;
 
+    public AudioClip pickupSound;
+    
     private void Start()
     {
         _player = GameObject.FindGameObjectWithTag("Hero");
@@ -24,6 +26,8 @@ public class Resource : MonoBehaviour
     {
         if (collision.collider.tag == "Hero")
         {
+            if (pickupSound != null) AudioSource.PlayClipAtPoint(pickupSound, Camera.main.transform.position);
+            
             GameState.GameState.GetInstance().Resources += Amount;
             Destroy(this.gameObject);
         }
