@@ -9,6 +9,7 @@ TagManager:
   - Wall
   - HeroProjectile
   - ShopItem
+  - Key
   layers:
   - Default
   - TransparentFX

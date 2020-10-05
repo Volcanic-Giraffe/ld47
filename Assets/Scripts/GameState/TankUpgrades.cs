@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -15,7 +16,9 @@ public class TankUpgrades : MonoBehaviour
     public int powerUpgrades;
     public int specialUpgrades;
 
-    
+    public GameObject KeyGO;
+    public bool HasKey;
+
     // affects projectiles and explosions!
     public float DamageFormula(float damage)
     {
@@ -26,5 +29,11 @@ public class TankUpgrades : MonoBehaviour
     {
         if (firerateUpgrades == 0) return firerate;
         return firerate * (Mathf.Pow(firerateBuff, firerateUpgrades));
+    }
+
+    public void AddKey()
+    {
+        KeyGO.SetActive(true);
+        HasKey = true;
     }
 }
