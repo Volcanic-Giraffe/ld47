@@ -29,7 +29,9 @@ namespace Loop
 
         private void OnDrawGizmos()
         {
+#if UNITY_EDITOR
             Handles.Label(transform.position, $"idx={SectorUtils.PositionToSectorIdx(_initPosition)} loop={GameState.GameState.GetInstance().GetLoopByIdx(SectorUtils.PositionToSectorIdx(_initPosition))}");
+#endif
         }
 
         public object SaveState()
