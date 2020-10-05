@@ -20,6 +20,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs: []
     m_Floats:
+    - BeamSize: 0.1
     - BeamVisibility: 1
     - BeamVisibilityDecrease: 1
     - Vector1_48F7780C: 0.1

@@ -1,4 +1,5 @@
 ﻿using System;
+using GameState;
 using UnityEngine;
 
 namespace Shadow
@@ -11,10 +12,40 @@ namespace Shadow
 
         public bool DecreaseBeam = true;
 
+        public float DefaultBeamSize = 0.1f;
+
+        public float MaxBeamSize = 20f;
+
         private void Awake()
         {
             _hero = GameObject.FindWithTag("Hero");
             _state = GameState.GameState.GetInstance();
+            
+            _state.OnLoopChange += StateOnOnLoopChange;
+            ShadowerMaterial.SetFloat("BeamSize", DefaultBeamSize);
+        }
+
+        private int _loopToMaximizeBeam = 0;
+        private int _sectorToStartMaximize = 45;
+        private int _sectorToStopMaximize = 65;
+
+        private void StateOnOnLoopChange(SectorChangeLoop obj)
+        {
+            if (obj.PrevLoop != null 
+                && ((obj.PrevLoop == _loopToMaximizeBeam && obj.NewLoop == _loopToMaximizeBeam+1)  
+                    || (obj.PrevLoop == _loopToMaximizeBeam+1 && obj.NewLoop == _loopToMaximizeBeam))
+                    
+                && obj.SectorIdx >= _sectorToStartMaximize 
+                && obj.SectorIdx <= _sectorToStopMaximize)
+            {
+                var size = Mathf.Pow(1 - 2 * Mathf.Abs(((float)obj.SectorIdx - _sectorToStartMaximize) / ((float)_sectorToStopMaximize - _sectorToStartMaximize) - 0.5f), 2f);
+                Debug.Log($"CHANGE BEAM {size}");
+                ShadowerMaterial.SetFloat("BeamSize", Mathf.Lerp(DefaultBeamSize, MaxBeamSize, size));
+            }
+            else
+            {
+                ShadowerMaterial.SetFloat("BeamSize", DefaultBeamSize);
+            }
         }
 
         private void Update()

@@ -56,7 +56,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a64eb9f81f4d4192b67d82c558b5830c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ChangeEveryLoop: 1
+  ChangeEveryLoop: 0.8
+  ForceMove: 0
 --- !u!1 &279748236195473183
 GameObject:
   m_ObjectHideFlags: 0

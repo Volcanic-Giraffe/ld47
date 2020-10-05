@@ -46,6 +46,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ShadowerMaterial: {fileID: 2100000, guid: 472d5a7fabd189648b302e648dd6f4b9, type: 2}
+  DecreaseBeam: 1
+  DefaultBeamSize: 0.1
+  MaxBeamSize: 15
 --- !u!33 &3245923591571084103
 MeshFilter:
   m_ObjectHideFlags: 0
