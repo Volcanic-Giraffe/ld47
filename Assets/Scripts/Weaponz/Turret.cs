@@ -21,7 +21,7 @@ public class Turret : MonoBehaviour
         RaycastHit hit;
         Ray ray = _camera.ScreenPointToRay(Input.mousePosition);
 
-        if (Physics.Raycast(ray, out hit, 50, ~LayerMask.NameToLayer("BasePlane")))
+        if (Physics.Raycast(ray, out hit, 250, ~LayerMask.NameToLayer("BasePlane")))
         {
             var lookPos = hit.point - transform.position;
             lookPos.y = 0;
