@@ -11,6 +11,7 @@ TagManager:
   - ShopItem
   - Key
   - CoreMain
+  - Tile
   layers:
   - Default
   - TransparentFX
